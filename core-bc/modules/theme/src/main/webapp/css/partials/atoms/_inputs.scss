@@ -1,0 +1,13 @@
+// Overruling Liferay/Bootstrap styling
+// --------
+.input-medium {
+	width: 40%;
+}
+
+.input-large {
+	width: 70%;
+}
+
+textarea.input-large {
+	height: 7em;
+}

@@ -1,0 +1,48 @@
+// This file contains styling which overrides the standard Liferay portlets
+// Things like styling the search engine results page, the blog etc.
+// --------
+
+
+// All portlets
+.portlet {
+
+	.portlet-topper {
+		.portlet-title {
+			img {
+				display: none;
+			}
+		}
+		.portlet-topper-toolbar {
+		}
+	}
+
+	.portlet-content {
+		.portlet-body {
+		}
+	}
+
+}
+
+.portlet-borderless-container {
+  min-height: 0;
+}
+
+// Web Content Display and Asset Publisher
+.portlet-journal-content,
+.portlet-asset-publisher {
+
+	.portlet-content {
+		.portlet-body {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+}
+
+// Web Content Display
+.portlet-journal-content {
+	.portlet-borderless-container .journal-content-article {
+		margin-bottom: 15px;
+	}
+}

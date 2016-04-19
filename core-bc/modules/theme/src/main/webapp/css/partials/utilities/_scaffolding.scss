@@ -1,0 +1,13 @@
+// This file contains all overall scaffolding which is not part of the grid.
+// Things like main content padding/margins
+// --------
+
+.portlet-column-content.empty {
+	padding: 0;
+}
+
+.page-edit.controls-visible {
+	.portlet-column-content.empty {
+		padding: 50px;
+	}
+}

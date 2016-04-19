@@ -1,0 +1,105 @@
+@import '../../aui_variables';
+
+
+// Breakpoints
+// -------------------------
+$bp-xsmall : 600px;
+$bp-small : 800px;
+$bp-medium : 1000px;
+$bp-large : 1199px;
+
+// Breakpoint height
+$bp-height-xsmall : 600px;
+$bp-height-small : 800px;
+$bp-height-medium : 1000px;
+$bp-height-large : 1400px;
+
+
+// Colors - contansts
+// -------------------------
+
+
+// B&W
+$gb-white:        #fff;
+$gb-black: 		    #000;
+
+// Blues
+$gb-blue:         #327cb4;
+
+
+// Grayscale
+$gb-mineshaft:	#222;
+$gb-tundora:		#444;
+$gb-emperor:		#555;
+$gb-graydove:		#666;
+$gb-boulder:		#777;
+$gb-graydusty:	#999;
+$gb-silver:		  #ccc;
+$gb-alto:		    #ddd;
+$gb-gallery:		#eee;
+
+
+// Colors
+// -------------------------
+$bg:					     $gb-white;
+$text-color:	     $textColor; //From _aui_variables
+
+$heading-color:	   $gb-mineshaft;
+
+$link-color:		   $linkColor; //From _aui_variables
+$link-hover-color: $linkColorHover; //From _aui_variables
+
+// Fonts
+// -------------------------
+$base-font-size: 	$baseFontSize; //From _aui_variables
+$base-line-height:	$baseLineHeight; //From _aui_variables
+$base-font-weight:	400;
+
+// Selector, Size, Font Weight, Letter Spacing
+
+$font-list: (
+  h1	32px 	400	normal	$heading-color,
+  h2	26px	400	normal	$heading-color,
+  h3	22px  400	normal	$heading-color,
+  h4	20px	400	normal	$heading-color,
+  h5	20px  400	normal	$heading-color,
+  h6	20px 	400	normal	$heading-color
+);
+
+$font-weight-normal: 		normal;
+$font-weight-bold:			bold;
+$font-weight-light: 		200;
+$font-weight-ultralight: 	100;
+
+// Padding and sizes
+// -------------------------
+
+$default-border-radius:		3px; //Compass named default variable.
+
+// Content (font-awesome)
+// -------------------------
+
+$content-arrow-left: "\f060";
+$content-arrow-right: "\f061";
+$content-arrow-up: "\f062";
+$content-arrow-down: "\f063";
+$content-long-arrow-left: "\f177";
+$content-long-arrow-right: "\f178";
+$content-long-arrow-up: "\f176";
+$content-long-arrow-down: "\f175";
+
+$content-bars: "\f0c9";
+
+$content-chevron-left: "\f053";
+$content-chevron-right: "\f054";
+$content-chevron-up: "\f077";
+$content-chevron-down: "\f078";
+
+// Transitions
+// -------------------------
+
+$default-transition-time: 0.3s;
+
+// Other
+// -------------------------
+$grid-background-baseline-color: rgba(255, 0, 0, 0.5); //DEBUG
