@@ -9,6 +9,8 @@
 
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
+	<script src="${javascript_folder}/pojs.js"></script>
+
 	${theme.include(top_head_include)}
 </head>
 
@@ -18,57 +20,48 @@
 
 ${theme.include(body_top_include)}
 
-<#if is_signed_in>
-	<@liferay.dockbar />
-</#if>
+<#include "${full_templates_path}/side_panel.ftl" />
 
-<div class="container-fluid" id="wrapper">
-	<header id="banner" role="banner">
-		<div id="heading">
-			<h1 class="site-title">
-				<a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-					<img alt="${logo_description}" height="${site_logo_height}" src="${site_logo}" width="${site_logo_width}" />
-				</a>
+<div class="wrapper-outer push">
+	<#if is_signed_in>
+		<div class="dockbar-wrap">
+			<@liferay.dockbar />
+		</div>
+	</#if>
 
-				<#if show_site_name>
-					<span class="site-name" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-						${site_name}
-					</span>
-				</#if>
-			</h1>
+	<div class="container-fluid" id="wrapper">
 
+		<header id="banner" role="banner"></header>
+
+		<div id="content">
+
+			<#if selectable>
+				${theme.include(content_include)}
+			<#else>
+				${portletDisplay.recycle()}
+
+				${portletDisplay.setTitle(the_title)}
+
+				${theme.wrapPortlet("portlet.ftl", content_include)}
+			</#if>
 		</div>
 
-		<#if !is_signed_in>
-			<a href="${sign_in_url}" data-redirect="${is_login_redirect_required?string}" id="sign-in" rel="nofollow">${sign_in_text}</a>
-		</#if>
+		<#include "${full_templates_path}/footer.ftl" />
 
-		<#if has_navigation || is_signed_in>
-			<#include "${full_templates_path}/navigation.ftl" />
-		</#if>
-	</header>
-
-	<div id="content">
-
-		<#if selectable>
-			${theme.include(content_include)}
-		<#else>
-			${portletDisplay.recycle()}
-
-			${portletDisplay.setTitle(the_title)}
-
-			${theme.wrapPortlet("portlet.ftl", content_include)}
-		</#if>
 	</div>
-
-	<footer id="footer" role="contentinfo">
-		<p class="powered-by">
-			<@liferay.language key="powered-by" /> <a href="http://www.liferay.com" rel="external">Liferay</a>
-		</p>
-	</footer>
 </div>
 
 ${theme.include(body_bottom_include)}
+
+<script type="text/javascript" src="${javascript_folder}/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+	var jQueryTheme = jQuery.noConflict();
+</script>
+<script type="text/javascript" src="${javascript_folder}/jquery/jquery.big-slide/bigSlide.min.js"></script>
+<script type="text/javascript" src="${javascript_folder}/jquery/jquery.hotkeys/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="${javascript_folder}/jquery/jquery.modal/jquery.modal.js"></script>
+<script src="${javascript_folder}/jq.js"></script>
+
 
 ${theme.include(bottom_include)}
 

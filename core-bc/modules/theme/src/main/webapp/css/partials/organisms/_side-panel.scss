@@ -1,0 +1,73 @@
+$sidePanelMaximizedWidth: 20.0em; // Same as in javascript bigSlide
+
+.side-panel-wrap {
+
+  .side-panel {
+
+    background: $gb-mineshaft;
+    color: $gb-white;
+
+    a,
+    a:visited {
+      color: $gb-white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    h1 {
+      color: $gb-white;
+    }
+
+    .navigation-trigger {
+      color: $gb-white;
+      text-decoration: none;
+
+      span {
+        font-size: 0;
+        text-indent: -9999em;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:after {
+        @include iconfont(1.4em);
+        content: $content-bars;
+      }
+    }
+
+
+    &.side-panel-minimized {
+      position: fixed;
+      height: 100%;
+      z-index: 2;
+
+      .side-panel-inner {
+        padding: 30px 0;
+        text-align: center;
+        width: 60px;
+      }
+    }
+
+    &.side-panel-maximized {
+      position: fixed;
+      left: -$sidePanelMaximizedWidth;
+      width: $sidePanelMaximizedWidth;
+      //z-index: 3;
+
+      .side-panel-inner {
+        padding: 5em 3em;
+      }
+
+    }
+
+  }
+
+
+
+
+}

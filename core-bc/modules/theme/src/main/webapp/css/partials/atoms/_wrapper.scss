@@ -1,4 +1,12 @@
+.wrapper-outer {
+    position: relative;
+
+    margin-left: 60px;
+}
+
 #wrapper {
+
+  position: relative;
 
   // Reset Liferay defaults
   @include respond-to(phone) {
