@@ -2,20 +2,80 @@
   $(function() {
     //do stuff with $ here
 
-    //gbJs.bigSlide, gbJs.registeredHotkeys
-    var gbJs = {};
+    if(typeof gbJs == 'undefined') {
+      gbJs = {};
+    }
+
     gbJs.registeredHotkeys = {};
     gbJs.debugMode = true;
     //gbJs.debugMode = false;
 
     initBigSlide();
-    initHotkeys();
+    focusOnLoad();
+    //initHotkeys();
+    initHotkeys2();
+    initToggleDockbar();
+    selectReplace();
+    updateTopBar();
 
     function initBigSlide() {
 
       gbJs.bigSlide = $('.navigation-trigger').bigSlide({
         menu: '.side-panel-maximized',
         menuWidth: '20.0em'
+      });
+
+    }
+
+    function focusOnLoad() {
+
+      var focusCandidates = $('[data-focus="true"]');
+
+      if(focusCandidates.size() > 0) {
+        focusElement = $(focusCandidates[0]);
+
+        if(focusElement.is('form')) {
+          focusElement.find(':input:not(:hidden)').get(0).focus();
+        } else {
+          focusElement.focus();
+        }
+
+      }
+
+    }
+
+    function initHotkeys2() {
+
+      // Register help
+      hotkeys('h', function(event, handler){
+        //toggleHotkeyDialog();
+        console.log('You pressed h');
+      });
+
+      // Register UI-nodes
+      var hotkeyNodes = $('[data-hotkey]');
+
+      $.each(hotkeyNodes, function(index, hotkeyNode) {
+        var dataHotkey = $(hotkeyNode).data('hotkey');
+        var dataHotkeyMethod = $(hotkeyNode).data('hotkeymethod');
+        var titleAttr = $(hotkeyNode).data('hotkeytitle');
+
+        if(!(dataHotkey in gbJs.registeredHotkeys)) {
+
+          hotkeys(dataHotkey, function(event, handler){
+            if(dataHotkeyMethod == 'click') {
+              $(hotkeyNode).trigger('click');
+            } else if(dataHotkeyMethod == 'navigate') {
+                window.location = $(hotkeyNode).attr('href');
+            }
+          });
+
+
+          gbJs.registeredHotkeys[dataHotkey] = {};
+        } else if (gbJs.debugMode) {
+          console.log('hotkey "' + dataHotkey + '" is already registered');
+        }
+
       });
 
     }
@@ -81,7 +141,35 @@
       }
     }
 
+    function initToggleDockbar() {
 
+      $('.toggle-dockbar').on('click', function(e) {
+        var body = $('body');
+
+        if(body.hasClass('dockbar-visible')) {
+          body.removeClass('dockbar-visible');
+          Liferay.Store('toggle_dockbar', 'hidden');
+        } else {
+          body.addClass('dockbar-visible');
+          Liferay.Store('toggle_dockbar', 'visible');
+        }
+
+        return false;
+      });
+
+    }
+
+    function selectReplace() {
+      $('select[data-selectreplace="true"]').chosen({});
+    }
+
+    function updateTopBar() {
+
+      if(gbJs.topBarHeading) {
+        $('#topBar h1.page-title').html(gbJs.topBarHeading);
+      }
+
+    }
 
 
   });

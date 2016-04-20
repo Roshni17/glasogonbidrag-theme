@@ -8,6 +8,7 @@
 	<title>${the_title} - ${company_name}</title>
 
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 	<script src="${javascript_folder}/pojs.js"></script>
 
@@ -20,13 +21,19 @@
 
 ${theme.include(body_top_include)}
 
-<#include "${full_templates_path}/side_panel.ftl" />
+<#if is_signed_in>
+	<#include "${full_templates_path}/side_panel.ftl" />
+</#if>
 
 <div class="wrapper-outer push">
-	<#if is_signed_in>
+	<#if show_dockbar>
 		<div class="dockbar-wrap">
 			<@liferay.dockbar />
 		</div>
+	</#if>
+
+	<#if is_signed_in>
+		<#include "${full_templates_path}/top_bar.ftl" />
 	</#if>
 
 	<div class="container-fluid" id="wrapper">
@@ -60,6 +67,8 @@ ${theme.include(body_bottom_include)}
 <script type="text/javascript" src="${javascript_folder}/jquery/jquery.big-slide/bigSlide.min.js"></script>
 <script type="text/javascript" src="${javascript_folder}/jquery/jquery.hotkeys/jquery.hotkeys.js"></script>
 <script type="text/javascript" src="${javascript_folder}/jquery/jquery.modal/jquery.modal.js"></script>
+<script type="text/javascript" src="${javascript_folder}/jquery/chosen.jquery/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="${javascript_folder}/hotkeys/hotkeys.js"></script>
 <script src="${javascript_folder}/jq.js"></script>
 
 

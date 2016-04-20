@@ -2,7 +2,7 @@
 
   <div class="side-panel side-panel-minimized push">
     <div class="side-panel-inner">
-      <a href="#navigation" class="navigation-trigger" title="Visa meny (ctrl+m)" data-hotkey="ctrl+m" data-hotkeymethod="click" data-hotkeytitle="Visa huvudmeny" >
+      <a href="#navigation" class="navigation-trigger" title="Visa meny (m)" data-hotkey="m" data-hotkeymethod="click" data-hotkeytitle="Visa huvudmeny" >
         <span>Visa meny</span>
       </a>
     </div>

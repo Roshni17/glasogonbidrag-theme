@@ -1,5 +1,6 @@
 <nav class="" id="navigation" role="navigation">
 	<ul aria-label="<@liferay.language key="site-pages" />" role="menubar">
+
 		<#list nav_items as nav_item>
 			<#assign nav_item_attr_has_popup = "" />
 			<#assign nav_item_attr_selected = "" />
@@ -32,6 +33,12 @@
 				</a>
 			</li>
 		</#list>
+
+		<#if show_dockbar>
+			<li>
+				<a class="toggle-dockbar" href="javascript:;">Toggle Dockbar</a>
+			</li>
+		</#if>
 
 		<#if is_signed_in>
 			<li>

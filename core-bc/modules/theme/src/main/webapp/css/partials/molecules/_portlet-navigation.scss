@@ -17,8 +17,8 @@
         width: 33.33%;
 
         > a {
-          background: $gb-gallery;
-          color: $gb-mineshaft;
+          background: $gb-mirage;
+          color: $gb-white;
           display: block;
           font-weight: normal;
           line-height: 1.2;
@@ -32,7 +32,7 @@
           @include border-radius();
 
           &:hover {
-            background: darken($gb-gallery, 10);
+            background: tint($gb-mirage, 10);
           }
 
         }

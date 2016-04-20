@@ -1,0 +1,36 @@
+.field-row {
+
+  margin: 10px 0;
+
+  .field-element {
+    display: inline-block;
+    @include box-sizing(border-box);
+
+  }
+
+  &.field-row-2 {
+    @include clearfix();
+
+    .field-element {
+      float: left;
+      width: 50%;
+
+      &:first-child {
+        padding-right: 0.5em;
+      }
+      &:last-child {
+        padding-left: 0.5em;
+      }
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 90%;
+      }
+
+    }
+
+  }
+
+
+}

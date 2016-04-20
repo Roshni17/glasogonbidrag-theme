@@ -25,6 +25,35 @@
 
 <#------ Dockbar -------------------------------------------------->
 
+<#assign show_dockbar = false />
+
+<#if is_signed_in>
+
+	<#if permissionChecker.isOmniadmin()>
+		<#assign show_dockbar = true />
+	<#else>
+		<!-- Editor role name is "Editor" and role is site-scoped -->
+		<#assign editor_role_name = "Editor" />
+
+		<#assign is_site_editor = userGroupRoleLocalService.hasUserGroupRole(user_id, group_id, editor_role_name) />
+
+		<#if is_site_editor>
+			<#assign show_dockbar = true />
+		</#if>
+
+	</#if>
+
+</#if>
+
+<#--
+-->
+<#assign toggle_dockbar = sessionClicks.get(request, "toggle_dockbar", "hidden") />
+
+<#if toggle_dockbar == "visible">
+	<#assign css_class = css_class + " dockbar-visible" />
+</#if>
+
+
 <#------ Macros -------------------------------------------------->
 
 <#-- Include an Asset Publisher in theme. attribute: group_id is long, page_plid is long, setting_name is String, portlet_instance_suffix is String -->
