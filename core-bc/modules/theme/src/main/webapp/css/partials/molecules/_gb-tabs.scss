@@ -1,0 +1,68 @@
+.gb-tabs {
+
+  background: $gb-white;
+  border: none;
+  padding: 0;
+
+  @include border-radius(0px);
+
+  .ui-tabs-nav {
+    background: $gb-blue;
+    border: none;
+    padding: 1px 1px 0 1px;
+
+    @include border-radius(0);
+
+    li {
+      border: 1px solid tint($gb-blue, 20);
+      border-width: 0 1px 0 0;
+      margin: 0 1px 0 0;
+      @include border-radius(0);
+      @include box-shadow(none);
+
+      &.ui-state-default {
+        background: transparent;
+
+        a,
+        a:link,
+        a:visited {
+          color: $gb-white;
+          text-shadow: none;
+        }
+      }
+
+      &.ui-state-hover {
+        background: $gb-white;
+
+        a,
+        a:link,
+        a:visited {
+          color: $gb-mineshaft;
+        }
+      }
+
+      &.ui-state-active {
+        background: $gb-white;
+
+        a,
+        a:link,
+        a:visited {
+          color: $gb-mineshaft;
+        }
+      }
+
+      &.ui-state-focus {
+        @include box-shadow(none);
+      }
+
+
+    }
+  }
+
+
+  .ui-tabs-panel {
+    background: $gb-white;
+    border: 1px solid $gb-blue;
+  }
+
+}

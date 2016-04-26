@@ -24,7 +24,8 @@ $gb-white:        #fff;
 $gb-black: 		    #000;
 
 // Blues
-$gb-blue:         #327cb4;
+//$gb-blue:         #327cb4;
+$gb-blue:         #025296;
 $gb-mirage:       #18272e;
 
 // Grayscale
@@ -54,6 +55,8 @@ $link-hover-color: $linkColorHover; //From _aui_variables
 $base-font-size: 	$baseFontSize; //From _aui_variables
 $base-line-height:	$baseLineHeight; //From _aui_variables
 $base-font-weight:	400;
+
+$font-family-standard: 'Lato', Helvetica, Arial,sans-serif;
 
 // Selector, Size, Font Weight, Letter Spacing
 

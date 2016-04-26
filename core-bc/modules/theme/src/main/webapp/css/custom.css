@@ -23,6 +23,8 @@ body {
 
 
     @import 'partials/utilities/mixins';
+		@import 'partials/utilities/jquery-ui';
+		@import 'partials/utilities/jquery-ui-custom';
     @import 'partials/utilities/combines';
     @import 'partials/utilities/grid';
     @import 'partials/utilities/scaffolding';
@@ -34,6 +36,7 @@ body {
     @import 'partials/atoms/images';
     @import 'partials/atoms/inputs';
     @import 'partials/atoms/paragraphs';
+		@import 'partials/atoms/table';
 		@import 'partials/atoms/wrapper';
 
 		@import 'partials/molecules/button-row';
@@ -42,6 +45,7 @@ body {
 		@import 'partials/molecules/field-element';
 		@import 'partials/molecules/field-row';
 		@import 'partials/molecules/jquery-chosen';
+		@import 'partials/molecules/gb-tabs';
 		@import 'partials/molecules/main-navigation';
 		@import 'partials/molecules/portlet-login';
 		@import 'partials/molecules/portlet-navigation';

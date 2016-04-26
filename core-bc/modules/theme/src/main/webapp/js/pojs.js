@@ -114,4 +114,13 @@ function bindToggleMyApplicationNav() {
 		}
 }
 
+function focusOnAjaxCompleteTheme(data, elementId) {
+	if (data.status === 'success') {
+		var element =  document.getElementById(elementId);
+		element.focus();
+	}
+}
+
+
+
 //navigation-my-application-trigger
