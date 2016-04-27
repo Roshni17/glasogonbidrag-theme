@@ -6,55 +6,19 @@
 
   @include border-radius(0px);
 
-  .tabs-list {
+  .ui-tabs-nav {
     background: $gb-blue;
     border: none;
-    list-style: none;
-    margin: 0;
     padding: 1px 1px 0 1px;
 
     @include border-radius(0);
-    @include clearfix();
 
     li {
       border: 1px solid tint($gb-blue, 20);
       border-width: 0 1px 0 0;
-      float: left;
       margin: 0 1px 0 0;
-      padding: 0;
-      position: relative;
       @include border-radius(0);
       @include box-shadow(none);
-
-      .tab,
-      .tab:link,
-      .tab:visited {
-        color: $gb-white;
-        padding: 0.5em 1em;
-        display: block;
-        font-weight: normal;
-        position: relative;
-        text-shadow: none;
-        text-decoration: none;
-
-        &:hover {
-          background: $gb-white;
-          color: $gb-mineshaft;
-          text-decoration: none;
-        }
-      }
-
-      &.active {
-        background: $gb-white;
-        margin-bottom: -1px;
-        padding-bottom: 1px;
-
-        .tab,
-        .tab:link,
-        .tab:visited {
-          color: $gb-mineshaft;
-        }
-      }
 
       &.ui-state-default {
         background: transparent;
@@ -96,11 +60,9 @@
   }
 
 
-  .tabs-content {
+  .ui-tabs-panel {
     background: $gb-white;
     border: 1px solid $gb-blue;
-    padding: 1em 1.4em;
-    @include border-radius(0);
   }
 
 }

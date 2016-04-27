@@ -114,13 +114,14 @@ function bindToggleMyApplicationNav() {
 		}
 }
 
-function focusOnAjaxCompleteTheme(data, elementId) {
+function focusOnAjaxCompleteTheme(data, rootId) {
 	if (data.status === 'success') {
-		var element =  document.getElementById(elementId);
-		element.focus();
+		var root =  document.getElementById(rootId);
+		if(root) {
+			var firstAutoFocusElement = root.querySelector('[autofocus="true"]');
+			if(firstAutoFocusElement) {
+				firstAutoFocusElement.focus();
+			}
+		}
 	}
 }
-
-
-
-//navigation-my-application-trigger

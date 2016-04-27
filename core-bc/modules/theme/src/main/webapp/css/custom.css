@@ -35,6 +35,7 @@ body {
     @import 'partials/atoms/headings';
     @import 'partials/atoms/images';
     @import 'partials/atoms/inputs';
+		@import 'partials/atoms/link-btn';
     @import 'partials/atoms/paragraphs';
 		@import 'partials/atoms/table';
 		@import 'partials/atoms/wrapper';
