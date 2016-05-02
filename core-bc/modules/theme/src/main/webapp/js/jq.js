@@ -82,13 +82,15 @@
     function _initHotkeys() {
 
       // Register help
-      hotkeys('h', function(event, handler){
+      //hotkeys('h', function(event, handler){
         //_toggleHotkeyDialog();
         //console.log('You pressed h');
-      });
+      //});
 
       // Register UI-nodes
       var hotkeyNodes = $('[data-hotkey]');
+
+      //hotkeyds.unbind();
 
       $.each(hotkeyNodes, function(index, hotkeyNode) {
         var dataHotkey = $(hotkeyNode).data('hotkey');
@@ -123,6 +125,7 @@
       maskInputs.unmask();
 
       $.each(maskInputs, function(index, maskInput) {
+
         var dataMaskType = $(maskInput).data('masktype');
 
         if(dataMaskType == 'personnumber') {
@@ -130,11 +133,10 @@
         }
 
         if(dataMaskType == 'date') {
-          $(maskInput).mask('1111-11-11');
+          $(maskInput).mask('0000-00-00');
         }
 
       });
-
     }
 
     function _initToggleDockbar() {
@@ -171,6 +173,16 @@
       console.log('_onViewReload');
       _initInputMask();
       _focusNode();
+
+
+
+      // //_focusOnLoad();
+      // _initHotkeys();
+      // OK _initInputMask();
+      //
+      // _initSelectReplace();
+      // _initUpdateTopBar();
+
     }
 
     function _registerViewReloadListener() {
