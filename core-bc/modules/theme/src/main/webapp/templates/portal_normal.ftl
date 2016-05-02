@@ -10,6 +10,7 @@
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+	<script src="${javascript_folder}/radio/radio.min.js"></script>
 	<script src="${javascript_folder}/pojs.js"></script>
 
 	${theme.include(top_head_include)}

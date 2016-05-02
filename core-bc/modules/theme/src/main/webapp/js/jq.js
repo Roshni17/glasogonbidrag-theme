@@ -10,13 +10,30 @@
     gbJs.debugMode = true;
     //gbJs.debugMode = false;
 
+    // Run only once
     initBigSlide();
+    initToggleDockbar();
+
+    // Run when data is loaded
+    // i.e. when event 'viewReloaded' topic us broadcast on radio
     //focusOnLoad();
     initHotkeys();
     initInputMask();
-    initToggleDockbar();
-    selectReplace();
-    updateTopBar();
+
+    initSelectReplace();
+    initUpdateTopBar();
+
+    initJQCallback();
+
+
+
+    function initJQCallback() {
+      radio('onFocusOnAjaxCompleteTheme').subscribe(jqCallback);
+    }
+
+    function jqCallback() {
+      console.log('I am a jquery callback.');
+    }
 
 
     function focusOnLoad() {
@@ -157,17 +174,19 @@
 
     }
 
-    function selectReplace() {
-      $('select[data-selectreplace="true"]').chosen({});
-    }
-
-    function updateTopBar() {
+    function initUpdateTopBar() {
 
       if(gbJs.topBarHeading) {
         $('#topBar h1.page-title').html(gbJs.topBarHeading);
       }
 
     }
+
+
+    function initSelectReplace() {
+      $('select[data-selectreplace="true"]').chosen({});
+    }
+
 
 
   });

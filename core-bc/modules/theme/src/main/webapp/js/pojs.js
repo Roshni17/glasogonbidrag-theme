@@ -116,6 +116,8 @@ function bindToggleMyApplicationNav() {
 
 function focusOnAjaxCompleteTheme(data, rootId) {
 	if (data.status === 'success') {
+		radio('onFocusOnAjaxCompleteTheme').broadcast();
+
 		var root =  document.getElementById(rootId);
 		if(root) {
 			var firstAutoFocusElement = root.querySelector('[autofocus="true"]');
@@ -124,4 +126,10 @@ function focusOnAjaxCompleteTheme(data, rootId) {
 			}
 		}
 	}
+}
+
+radio('onFocusOnAjaxCompleteTheme').subscribe(onFocusOnAjaxCompleteThemeCallback);
+
+function onFocusOnAjaxCompleteThemeCallback() {
+	console.log('onFocusOnAjaxCompleteTheme');
 }
