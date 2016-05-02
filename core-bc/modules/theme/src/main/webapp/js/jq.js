@@ -10,33 +10,44 @@
     gbJs.debugMode = true;
     //gbJs.debugMode = false;
 
+    // Run init
+    init();
+
+    // Public methods
+
     // Run only once
-    initBigSlide();
-    initToggleDockbar();
+    function init() {
+      _initBigSlide();
+      _initToggleDockbar();
+
+      refreshUI();
+    }
 
     // Run when data is loaded
     // i.e. when event 'viewReloaded' topic us broadcast on radio
-    //focusOnLoad();
-    initHotkeys();
-    initInputMask();
+    function refreshUI() {
+      //_focusOnLoad();
+      _initHotkeys();
+      _initInputMask();
 
-    initSelectReplace();
-    initUpdateTopBar();
+      _initSelectReplace();
+      _initUpdateTopBar();
 
-    initJQCallback();
-
-
-
-    function initJQCallback() {
-      radio('onFocusOnAjaxCompleteTheme').subscribe(jqCallback);
+      _initJQCallback();
     }
 
-    function jqCallback() {
+    // Private methods
+
+    function _initJQCallback() {
+      radio('onFocusOnAjaxCompleteTheme').subscribe(_jqCallback);
+    }
+
+    function _jqCallback() {
       console.log('I am a jquery callback.');
     }
 
 
-    function focusOnLoad() {
+    function _focusOnLoad() {
 
       var focusCandidates = $('[data-focus="true"]');
 
@@ -52,7 +63,7 @@
       }
     }
 
-    function focus(parentNode) {
+    function _focus(parentNode) {
 
       var focusCandidates = $(parentNode).find('[data-focus="true"]');
 
@@ -69,7 +80,7 @@
     }
 
 
-    function initBigSlide() {
+    function _initBigSlide() {
 
       gbJs.bigSlide = $('.navigation-trigger').bigSlide({
         menu: '.side-panel-maximized',
@@ -78,11 +89,11 @@
 
     }
 
-    function initHotkeys() {
+    function _initHotkeys() {
 
       // Register help
       hotkeys('h', function(event, handler){
-        //toggleHotkeyDialog();
+        //_toggleHotkeyDialog();
         //console.log('You pressed h');
       });
 
@@ -113,7 +124,7 @@
 
     }
 
-    function initInputMask() {
+    function _initInputMask() {
 
       // Register UI-nodes
       var maskInputs = $('[data-mask="true"]');
@@ -133,7 +144,7 @@
 
     }
 
-    function toggleHotkeyDialog() {
+    function _toggleHotkeyDialog() {
 
       if(!gbJs.hotkeyModalNode) {
 
@@ -156,7 +167,7 @@
       }
     }
 
-    function initToggleDockbar() {
+    function _initToggleDockbar() {
 
       $('.toggle-dockbar').on('click', function(e) {
         var body = $('body');
@@ -174,7 +185,7 @@
 
     }
 
-    function initUpdateTopBar() {
+    function _initUpdateTopBar() {
 
       if(gbJs.topBarHeading) {
         $('#topBar h1.page-title').html(gbJs.topBarHeading);
@@ -183,7 +194,7 @@
     }
 
 
-    function initSelectReplace() {
+    function _initSelectReplace() {
       $('select[data-selectreplace="true"]').chosen({});
     }
 

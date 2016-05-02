@@ -60,6 +60,6 @@
 		<liferay.auto.deploy.dir>${project.build.directory}/dummy-deploy</liferay.auto.deploy.dir>
 		<liferay.theme.parent>_styled</liferay.theme.parent>
 		<liferay.theme.type>ftl</liferay.theme.type>
-		<liferay.version>6.2.10.9</liferay.version>
+		<liferay.version>6.2.10.15</liferay.version>
 	</properties>
 </project>
