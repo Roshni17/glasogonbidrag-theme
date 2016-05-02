@@ -19,6 +19,7 @@
     function init() {
       _initBigSlide();
       _initToggleDockbar();
+      _registerViewReloadListener();
 
       refreshUI();
     }
@@ -32,20 +33,9 @@
 
       _initSelectReplace();
       _initUpdateTopBar();
-
-      _initJQCallback();
     }
 
     // Private methods
-
-    function _initJQCallback() {
-      radio('onFocusOnAjaxCompleteTheme').subscribe(_jqCallback);
-    }
-
-    function _jqCallback() {
-      console.log('I am a jquery callback.');
-    }
-
 
     function _focusOnLoad() {
 
@@ -63,7 +53,7 @@
       }
     }
 
-    function _focus(parentNode) {
+    function _focusNode(parentNode) {
 
       var focusCandidates = $(parentNode).find('[data-focus="true"]');
 
@@ -127,7 +117,10 @@
     function _initInputMask() {
 
       // Register UI-nodes
-      var maskInputs = $('[data-mask="true"]');
+      var maskInputs = $('[data-usemask="true"]');
+
+      // Start by unmasking all
+      maskInputs.unmask();
 
       $.each(maskInputs, function(index, maskInput) {
         var dataMaskType = $(maskInput).data('masktype');
@@ -142,29 +135,6 @@
 
       });
 
-    }
-
-    function _toggleHotkeyDialog() {
-
-      if(!gbJs.hotkeyModalNode) {
-
-        var modalDialogHtml = '<div id="hotkeyModal">Show hotkeys here.</div>'
-
-        var modalNodeArr = $(modalDialogHtml).prependTo('body');
-        var modalNode = modalNodeArr[0];
-        gbJs.hotkeyModalNode = modalNode;
-
-      } else {
-        //console.log('DID find modal wrap:');
-        //console.log(gbJs.hotkeyModalWrap);
-      }
-
-      $(gbJs.hotkeyModalNode).modal();
-
-      if (gbJs.debugMode) {
-        //console.log('toggleHotkeyDialog');
-        //console.log(gbJs.registeredHotkeys);
-      }
     }
 
     function _initToggleDockbar() {
@@ -193,10 +163,43 @@
 
     }
 
-
     function _initSelectReplace() {
       $('select[data-selectreplace="true"]').chosen({});
     }
+
+    function _onViewReload() {
+      console.log('_onViewReload');
+      _initInputMask();
+      _focusNode();
+    }
+
+    function _registerViewReloadListener() {
+        radio('viewReloaded').subscribe(_onViewReload);
+    }
+
+    function _toggleHotkeyDialog() {
+
+      if(!gbJs.hotkeyModalNode) {
+
+        var modalDialogHtml = '<div id="hotkeyModal">Show hotkeys here.</div>'
+
+        var modalNodeArr = $(modalDialogHtml).prependTo('body');
+        var modalNode = modalNodeArr[0];
+        gbJs.hotkeyModalNode = modalNode;
+
+      } else {
+        //console.log('DID find modal wrap:');
+        //console.log(gbJs.hotkeyModalWrap);
+      }
+
+      $(gbJs.hotkeyModalNode).modal();
+
+      if (gbJs.debugMode) {
+        //console.log('toggleHotkeyDialog');
+        //console.log(gbJs.registeredHotkeys);
+      }
+    }
+
 
 
 

@@ -116,7 +116,7 @@ function bindToggleMyApplicationNav() {
 
 function focusOnAjaxCompleteTheme(data, rootId) {
 	if (data.status === 'success') {
-		radio('onFocusOnAjaxCompleteTheme').broadcast();
+		radio('viewReloaded').broadcast();
 
 		var root =  document.getElementById(rootId);
 		if(root) {
