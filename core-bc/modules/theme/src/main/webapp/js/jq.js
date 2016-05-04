@@ -19,7 +19,7 @@
     function init() {
       _initBigSlide();
       _initToggleDockbar();
-      _registerViewReloadListener();
+      _registerViewPartialReloadListener();
 
       refreshUI();
     }
@@ -28,9 +28,9 @@
     // i.e. when event 'viewReloaded' topic us broadcast on radio
     function refreshUI() {
       //_focusOnLoad();
+      _initBoxCollapsible();
       _initHotkeys();
       _initInputMask();
-
       _initSelectReplace();
       _initUpdateTopBar();
     }
@@ -55,6 +55,17 @@
 
     function _focusNode(parentNode) {
 
+      var focusCandidates = $(parentNode).find('[autofocus="true"]');
+
+      if(focusCandidates.size() > 0) {
+        focusElement = $(focusCandidates[0]);
+        focusElement.focus();
+      }
+    }
+
+
+    function _focusNodeOld(parentNode) {
+
       var focusCandidates = $(parentNode).find('[data-focus="true"]');
 
       if(focusCandidates.size() > 0) {
@@ -69,6 +80,19 @@
       }
     }
 
+    function _initBoxCollapsible() {
+
+      $('.js-box-collapsible .box-title').on('click', function(e) {
+        //var box = $(this).closest('.js-box-collapsible');
+        //console.log('box: ', box);
+        $(this).closest('.js-box-collapsible').toggleClass('box-collapsed');
+
+      });
+
+
+      $('.js-box-collapsible').addClass('box-collapsible');
+
+    }
 
     function _initBigSlide() {
 
@@ -81,16 +105,15 @@
 
     function _initHotkeys() {
 
-      // Register help
-      //hotkeys('h', function(event, handler){
-        //_toggleHotkeyDialog();
-        //console.log('You pressed h');
-      //});
-
       // Register UI-nodes
       var hotkeyNodes = $('[data-hotkey]');
 
-      //hotkeyds.unbind();
+      // If keys are already registered, unbind them
+      var keys = Object.keys(gbJs.registeredHotkeys).join(', ');
+      if(keys != '') {
+        hotkeys.unbind(keys);
+        gbJs.registeredHotkeys = {};
+      }
 
       $.each(hotkeyNodes, function(index, hotkeyNode) {
         var dataHotkey = $(hotkeyNode).data('hotkey');
@@ -118,25 +141,15 @@
 
     function _initInputMask() {
 
-      // Register UI-nodes
-      var maskInputs = $('[data-usemask="true"]');
-
       // Start by unmasking all
-      maskInputs.unmask();
+      $('.js-input-mask').unmask();
 
-      $.each(maskInputs, function(index, maskInput) {
+      // Personnumber
+      $('.js-input-mask.js-input-mask-personnumber').mask('0000-00-00-0000');
 
-        var dataMaskType = $(maskInput).data('masktype');
+      // Date
+      $('.js-input-mask.js-input-mask-date').mask('0000-00-00');
 
-        if(dataMaskType == 'personnumber') {
-          $(maskInput).mask('00000000-0000');
-        }
-
-        if(dataMaskType == 'date') {
-          $(maskInput).mask('0000-00-00');
-        }
-
-      });
     }
 
     function _initToggleDockbar() {
@@ -166,53 +179,21 @@
     }
 
     function _initSelectReplace() {
-      $('select[data-selectreplace="true"]').chosen({});
+      // Start by destroying all potentially already created chosen
+      // Commented out. Not sure if this is really needed
+      //$('.js-select-replace').chosen({'destroy'});
+      $('.js-select-replace').chosen({});
     }
 
-    function _onViewReload() {
-      console.log('_onViewReload');
-      _initInputMask();
-      _focusNode();
-
-
-
-      // //_focusOnLoad();
-      // _initHotkeys();
-      // OK _initInputMask();
-      //
-      // _initSelectReplace();
-      // _initUpdateTopBar();
-
+    function _onViewPartialReload() {
+      //console.log('_onViewPartialReload');
+      refreshUI();
+      _focusNode($('#content'));
     }
 
-    function _registerViewReloadListener() {
-        radio('viewReloaded').subscribe(_onViewReload);
+    function _registerViewPartialReloadListener() {
+        radio('viewPartialReload').subscribe(_onViewPartialReload);
     }
-
-    function _toggleHotkeyDialog() {
-
-      if(!gbJs.hotkeyModalNode) {
-
-        var modalDialogHtml = '<div id="hotkeyModal">Show hotkeys here.</div>'
-
-        var modalNodeArr = $(modalDialogHtml).prependTo('body');
-        var modalNode = modalNodeArr[0];
-        gbJs.hotkeyModalNode = modalNode;
-
-      } else {
-        //console.log('DID find modal wrap:');
-        //console.log(gbJs.hotkeyModalWrap);
-      }
-
-      $(gbJs.hotkeyModalNode).modal();
-
-      if (gbJs.debugMode) {
-        //console.log('toggleHotkeyDialog');
-        //console.log(gbJs.registeredHotkeys);
-      }
-    }
-
-
 
 
   });

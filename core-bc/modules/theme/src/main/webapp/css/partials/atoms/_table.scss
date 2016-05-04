@@ -3,13 +3,14 @@
 .simple-table {
 
   font-size: 1.0em;
+  width: 100%;
 
   thead {
-    border-bottom: 1px solid $gb-mineshaft;
-    border-top: 1px solid $gb-mineshaft;
+    border-bottom: 1px solid $gb-bombay;
+    border-top: 1px solid $gb-bombay;
 
     th {
-      padding: 1em 1em;
+      padding: 0.5em 0.5em;
     }
   }
 
@@ -17,10 +18,10 @@
     vertical-align: top;
 
     tr {
-      border-bottom: 1px solid $gb-silver;
+      border-bottom: 1px solid rgba($gb-bombay, 0.5);
 
       td {
-        padding: 0.3em 1em;
+        padding: 0.3em 0.5em;
       }
     }
 

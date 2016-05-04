@@ -1,0 +1,68 @@
+.box {
+  background: $gb-white;
+  margin: 0 0 1em 0;
+  padding: 1em;
+  @include box-shadow(rgba($gb-bombay, 0.5) 2px 1px 10px 3px);
+
+  .box-hd {
+    position: relative;
+    .box-title {
+      color: $gb-emperor;
+      font-size: 1.2em;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      text-transform: capitalize;
+    }
+  }
+
+  .box-bd {}
+
+  .box-hd + .box-bd {
+    margin-top: 1em;
+  }
+
+
+  &.box-tight {
+    padding: 0;
+  }
+
+  &.box-sidebar {
+    background: rgba($gb-white, 0.5);
+    font-size: 0.9em;
+  }
+
+  &.box-collapsible {
+    .box-hd {
+      .box-title {
+        cursor: pointer;
+
+        &:after {
+            @include iconfont();
+            content: $content-minus-sign;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+      }
+    }
+
+    &.box-collapsed {
+      .box-hd {
+        .box-title {
+          &:after {
+            content: $content-plus-sign;
+          }
+        }
+      }
+      .box-bd {
+        display: none;
+      }
+    }
+
+
+  }
+
+
+}

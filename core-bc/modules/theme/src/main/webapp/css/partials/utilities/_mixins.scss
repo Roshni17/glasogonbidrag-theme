@@ -253,3 +253,48 @@
 @mixin hover-fade-in ($time:$default-transition-time) {
   @include transition(background #{$time} ease);
 }
+
+// Flexbox
+@mixin flexbox() {
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-direction($direction: row) {
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex-flow($value) {
+  -webkit-flex-flow: $value;
+  -moz-flex-flow: $value;
+  -ms-flex-flow: $value;
+  flex-flow: $value;
+}
+
+
+@mixin flex-wrap($value) {
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  -ms-flex-wrap: $value;
+  flex-wrap: $value;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($value) {
+  -webkit-box-ordinal-group: $value;
+  -moz-box-ordinal-group: $value;
+  -ms-flex-order: $value;
+  -webkit-order: $value;
+  order: $value;
+}

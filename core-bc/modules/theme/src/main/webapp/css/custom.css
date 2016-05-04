@@ -40,6 +40,7 @@ body {
 		@import 'partials/atoms/table';
 		@import 'partials/atoms/wrapper';
 
+		@import 'partials/molecules/box';
 		@import 'partials/molecules/button-row';
 		@import 'partials/molecules/dockbar';
 		@import 'partials/molecules/dummy';
@@ -47,7 +48,9 @@ body {
 		@import 'partials/molecules/field-row';
 		@import 'partials/molecules/jquery-chosen';
 		@import 'partials/molecules/gb-tabs';
+		@import 'partials/molecules/grant-section';
 		@import 'partials/molecules/main-navigation';
+		@import 'partials/molecules/person-info-row';
 		@import 'partials/molecules/portlet-login';
 		@import 'partials/molecules/portlet-navigation';
 		@import 'partials/molecules/top-bar';

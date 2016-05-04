@@ -1,30 +1,20 @@
 .gb-tabs {
-
-  background: $gb-white;
   border: none;
   padding: 0;
 
-  @include border-radius(0px);
-
   .tabs-list {
     background: $gb-blue;
-    border: none;
     list-style: none;
     margin: 0;
-    padding: 1px 1px 0 1px;
+    padding: 0;
 
-    @include border-radius(0);
     @include clearfix();
 
     li {
-      border: 1px solid tint($gb-blue, 20);
-      border-width: 0 1px 0 0;
       float: left;
       margin: 0 1px 0 0;
       padding: 0;
       position: relative;
-      @include border-radius(0);
-      @include box-shadow(none);
 
       .tab,
       .tab:link,
@@ -32,9 +22,7 @@
         color: $gb-white;
         padding: 0.5em 1em;
         display: block;
-        font-weight: normal;
         position: relative;
-        text-shadow: none;
         text-decoration: none;
 
         &:hover {
@@ -56,51 +44,13 @@
         }
       }
 
-      &.ui-state-default {
-        background: transparent;
-
-        a,
-        a:link,
-        a:visited {
-          color: $gb-white;
-          text-shadow: none;
-        }
-      }
-
-      &.ui-state-hover {
-        background: $gb-white;
-
-        a,
-        a:link,
-        a:visited {
-          color: $gb-mineshaft;
-        }
-      }
-
-      &.ui-state-active {
-        background: $gb-white;
-
-        a,
-        a:link,
-        a:visited {
-          color: $gb-mineshaft;
-        }
-      }
-
-      &.ui-state-focus {
-        @include box-shadow(none);
-      }
-
-
     }
   }
 
 
   .tabs-content {
-    background: $gb-white;
-    border: 1px solid $gb-blue;
+    //background: $gb-white;
     padding: 1em 1.4em;
-    @include border-radius(0);
   }
 
 }

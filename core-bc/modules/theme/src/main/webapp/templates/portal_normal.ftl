@@ -65,11 +65,8 @@ ${theme.include(body_bottom_include)}
 <script type="text/javascript">
 	var jQueryTheme = jQuery.noConflict();
 </script>
-<script type="text/javascript" src="${javascript_folder}/jquery/jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${javascript_folder}/jquery/jquery.big-slide/bigSlide.min.js"></script>
-<script type="text/javascript" src="${javascript_folder}/jquery/jquery.hotkeys/jquery.hotkeys.js"></script>
 <script type="text/javascript" src="${javascript_folder}/jquery/jquery.mask/jquery.mask.js"></script>
-<script type="text/javascript" src="${javascript_folder}/jquery/jquery.modal/jquery.modal.js"></script>
 <script type="text/javascript" src="${javascript_folder}/jquery/chosen.jquery/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="${javascript_folder}/hotkeys/hotkeys.js"></script>
 <script src="${javascript_folder}/jq.js"></script>

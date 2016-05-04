@@ -27,6 +27,7 @@ $gb-black: 		    #000;
 //$gb-blue:         #327cb4;
 $gb-blue:         #025296;
 $gb-mirage:       #18272e;
+$gb-catskill-white: #eef1f6;
 
 // Grayscale
 $gb-mineshaft:	#222;
@@ -39,10 +40,12 @@ $gb-silver:		  #ccc;
 $gb-alto:		    #ddd;
 $gb-gallery:		#eee;
 
+$gb-bombay: #afb1b8;
+
 
 // Colors
 // -------------------------
-$bg:					     $gb-white;
+$bg:					     $gb-catskill-white;
 $text-color:	     $textColor; //From _aui_variables
 
 $heading-color:	   $gb-mineshaft;
@@ -97,6 +100,9 @@ $content-chevron-left: "\f053";
 $content-chevron-right: "\f054";
 $content-chevron-up: "\f077";
 $content-chevron-down: "\f078";
+
+$content-minus-sign: "\f068";
+$content-plus-sign: "\f067";
 
 // Transitions
 // -------------------------

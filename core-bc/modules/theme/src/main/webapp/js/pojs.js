@@ -114,22 +114,8 @@ function bindToggleMyApplicationNav() {
 		}
 }
 
-function focusOnAjaxCompleteTheme(data, rootId) {
+function ajaxComplete(data) {
 	if (data.status === 'success') {
-		radio('viewReloaded').broadcast();
-
-		var root =  document.getElementById(rootId);
-		if(root) {
-			var firstAutoFocusElement = root.querySelector('[autofocus="true"]');
-			if(firstAutoFocusElement) {
-				firstAutoFocusElement.focus();
-			}
-		}
+		radio('viewPartialReload').broadcast();
 	}
-}
-
-radio('onFocusOnAjaxCompleteTheme').subscribe(onFocusOnAjaxCompleteThemeCallback);
-
-function onFocusOnAjaxCompleteThemeCallback() {
-	console.log('onFocusOnAjaxCompleteTheme');
 }
