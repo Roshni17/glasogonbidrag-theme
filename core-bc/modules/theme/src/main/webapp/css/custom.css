@@ -4,6 +4,7 @@
 // Vendor
 // --------
 @import 'compass';
+@import "compass/css3";
 @import 'compass/typography/vertical_rhythm';
 @import 'partials/utilities/variables';
 
@@ -11,6 +12,9 @@
 @import "mixins";
 
 @include establish-baseline; //Uses variables $base-font-size & $base-line-height
+
+// Import font awesome since Liferay's version is old.
+@import 'partials/utilities/font-awesome';
 
 body {
 	font-weight: $base-font-weight;
@@ -40,6 +44,7 @@ body {
 		@import 'partials/atoms/table';
 		@import 'partials/atoms/wrapper';
 
+		@import 'partials/molecules/block-navigation';
 		@import 'partials/molecules/box';
 		@import 'partials/molecules/button-row';
 		@import 'partials/molecules/dockbar';
@@ -48,6 +53,7 @@ body {
 		@import 'partials/molecules/field-row';
 		@import 'partials/molecules/jquery-chosen';
 		@import 'partials/molecules/gb-tabs';
+		@import 'partials/molecules/gn-menu';
 		@import 'partials/molecules/grant-section';
 		@import 'partials/molecules/main-navigation';
 		@import 'partials/molecules/person-info-row';

@@ -17,7 +17,8 @@
 
     // Run only once
     function init() {
-      _initBigSlide();
+      //_initBigSlide();
+      _initGnMenu();
       _initToggleDockbar();
       _registerViewPartialReloadListener();
 
@@ -32,7 +33,7 @@
       _initHotkeys();
       _initInputMask();
       _initSelectReplace();
-      _initUpdateTopBar();
+      //_initUpdateTopBar();
     }
 
     // Private methods
@@ -94,11 +95,30 @@
 
     }
 
+    // Not used anymore (?) if Nexus style menu is used
     function _initBigSlide() {
 
       gbJs.bigSlide = $('.navigation-trigger').bigSlide({
         menu: '.side-panel-maximized',
         menuWidth: '20.0em'
+      });
+
+    }
+
+    function _initGnMenu() {
+
+      // $('.gn-menu-wrapper').mouseover(function(){
+      //   $(this).addClass('gn-open-all');
+      // });
+      //
+      // $('.gn-menu-wrapper').mouseout(function(){
+      //   $(this).removeClass('gn-open-all');
+      // });
+
+
+
+      $('.gn-menu-wrapper').hover(function(){
+        $(this).toggleClass('gn-menu-wrapper-open');
       });
 
     }
@@ -170,6 +190,7 @@
 
     }
 
+    // Should be removed
     function _initUpdateTopBar() {
 
       if(gbJs.topBarHeading) {

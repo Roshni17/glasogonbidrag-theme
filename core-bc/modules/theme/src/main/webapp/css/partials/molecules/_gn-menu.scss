@@ -1,0 +1,247 @@
+.gn-menu-main {
+  background-color: $gb-mirage;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  @include box-sizing(border-box);
+
+  *,
+  *:after,
+  *:before {
+    @include box-sizing(border-box);
+  }
+
+  a {
+    color: $gb-white;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+
+    &:hover{
+      //background-color: $gb-white;
+      //color: $gb-mirage;
+
+      background-color: tint($gb-mirage, 15);
+    }
+
+  }
+
+  .gn-menu-wrapper {
+    background-color: $gb-mirage;
+    border-right: 1px solid tint($gb-mirage, 10);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    padding-top: 0;
+    position: fixed;
+    top: 0;
+    width: 60px;
+
+    transition: transform 0.3s, width 0.3s;
+
+    &.gn-menu-wrapper-open {
+      width: 340px;
+    }
+
+  }
+
+  .gn-scroller {
+    height: 100%;
+    position: absolute;
+    overflow-y: scroll;
+    width: 370px;
+    z-index: 10;
+  }
+
+  .site-heading {
+    padding: 10px 0;
+    text-align: center;
+    width: 60px;
+
+    .site-title {
+      font-size: 1.2em;
+      text-transform: uppercase;
+
+      a {
+        background: transparent;
+        color: $gb-white;
+        display: block;
+
+        &:hover {
+          background: transparent;
+        }
+
+        img {
+          display: inline-block;
+          text-align: center;
+          max-width: 50px;
+          padding: 0 10px;
+          visibility: hidden;
+          width: 100%;
+        }
+
+        .site-name {
+          display: none;
+        }
+
+      }
+    }
+  }
+
+  .gn-menu {
+    background: transparent;
+    border-bottom: 1px solid tint($gb-mirage, 10);
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    text-transform: none;
+    line-height: 60px;
+    text-align: left;
+
+    li {
+      border-top: 1px solid tint($gb-mirage, 10);
+      line-height: 60px;
+
+      &.gn-open-all-only {
+        display: none;
+      }
+
+      &.selected {
+        a {
+          //background-color: $gb-white;
+          //color: $gb-mirage;
+
+          background-color: tint($gb-mirage, 15);
+        }
+      }
+
+      .progress-wrap {
+
+        .progress-simple-wrap {
+          display: block;
+          padding: 10px 5px;
+
+          .progress-simple {
+            background: $gb-white;
+            color: $gb-mirage;
+            display: block;
+            height: 50px;
+            font-size: 1em;
+            line-height: 50px;
+            text-align: center;
+            width: 50px;
+
+            @include border-radius(50%);
+            @include box-shadow(inset 0 0 0 5px yellow);
+          }
+
+        }
+
+        .progress-details-wrap {
+          display: none;
+        }
+
+      }
+
+      &.gn-icon {
+
+        a:before {
+          @include iconfont();
+          content: $content-arrow-right;
+          display: inline-block;
+          line-height: 1;
+          text-align: center;
+          width: 60px;
+        }
+
+        &.gn-icon-default a:before {
+          content: $content-arrow-right;
+        }
+
+        &.gn-icon-home a:before {
+          content: $content-home;
+        }
+
+        &.gn-icon-invoice-register a:before {
+          content: $content-pencil-square-o;
+        }
+
+        &.gn-icon-invoice-search a:before {
+          content: $content-search;
+        }
+
+        &.gn-icon-beneficiaries a:before {
+          content: $content-users;
+        }
+
+        &.gn-icon-statistics a:before {
+          content: $content-bar-chart;
+        }
+
+        &.gn-icon-manage-basic-data a:before {
+          content: $content-database;
+        }
+
+        &.gn-icon-dockbar a:before {
+          content: $content-cog;
+        }
+
+        &.gn-icon-sign-in a:before {
+          content: $content-sign-in;
+        }
+
+        &.gn-icon-sign-out a:before {
+          content: $content-sign-out;
+        }
+
+
+      }
+
+    }
+
+  }
+
+  .gn-menu-wrapper-open {
+
+    .site-heading {
+      text-align: left;
+      width: 100%;
+
+      .site-title {
+        a {
+
+         img {
+           visibility: visible;
+         }
+
+          .site-name {
+            display: inline-block;
+            margin-left: 0.2em;
+          }
+        }
+      }
+    }
+
+    .gn-menu {
+      li {
+        &.gn-open-all-only {
+          display: block;
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+}

@@ -61,7 +61,8 @@
 // --------
 // For making icon fonts with font awesome
 @mixin iconfont($font-size:1.2em) {
-  font-family: 'fontawesome-alloy';
+  //font-family: 'fontawesome-alloy';
+  font-family: 'FontAwesome';
   speak: none;
   font-size: $font-size;
   font-style: normal;

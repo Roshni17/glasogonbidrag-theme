@@ -22,9 +22,15 @@
 
 ${theme.include(body_top_include)}
 
+<#--
 <#if is_signed_in>
 	<#include "${full_templates_path}/side_panel.ftl" />
 </#if>
+-->
+<#if is_signed_in>
+	<#include "${full_templates_path}/side_panel_2.ftl" />
+</#if>
+
 
 <div class="wrapper-outer push">
 	<#if show_dockbar>
@@ -33,9 +39,11 @@ ${theme.include(body_top_include)}
 		</div>
 	</#if>
 
+	<#--
 	<#if is_signed_in>
 		<#include "${full_templates_path}/top_bar.ftl" />
 	</#if>
+	-->
 
 	<div class="container-fluid" id="wrapper">
 
