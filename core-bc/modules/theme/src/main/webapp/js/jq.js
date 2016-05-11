@@ -18,7 +18,7 @@
     // Run only once
     function init() {
       //_initBigSlide();
-      _initGnMenu();
+      _initMainMenu();
       _initToggleDockbar();
       _registerViewPartialReloadListener();
 
@@ -105,21 +105,17 @@
 
     }
 
-    function _initGnMenu() {
+    function _initMainMenu() {
 
-      // $('.gn-menu-wrapper').mouseover(function(){
-      //   $(this).addClass('gn-open-all');
-      // });
-      //
-      // $('.gn-menu-wrapper').mouseout(function(){
-      //   $(this).removeClass('gn-open-all');
-      // });
-
-
-
-      $('.gn-menu-wrapper').hover(function(){
-        $(this).toggleClass('gn-menu-wrapper-open');
+      $('.gb-menu-wrapper').mouseover(function(){
+        $(this).addClass('gb-menu-open');
       });
+
+      $('.gb-menu-wrapper').mouseout(function(){
+        $(this).removeClass('gb-menu-open');
+      });
+
+
 
     }
 

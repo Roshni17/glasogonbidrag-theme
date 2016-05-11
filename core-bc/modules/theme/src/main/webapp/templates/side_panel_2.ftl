@@ -1,30 +1,28 @@
-<div id="gn-menu" class="gn-menu-main">
-    <nav class="gn-menu-wrapper">
+<div id="gb-menu" class="gb-menu-main">
+    <nav class="gb-menu-wrapper">
 
-      <div class="gn-scroller">
+      <div class="gb-scroller">
 
-        <div class="site-heading">
-          <h1 class="site-title">
-            <a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-              <img alt="${logo_description}" src="${site_logo}" />
-              <span class="site-name" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-                ${site_name}
-              </span>
-            </a>
-          </h1>
-        </div>
+        <ul class="gb-menu">
 
-        <ul class="gn-menu">
+          <li class="user-info">
+            <span>
+                Inloggad som: <span class="username">${user_name}</span>
+            </span>
+          </li>
 
-          <li>
-            <span class="progress-wrap">
+          <li class="progress-wrap">
               <span class="progress-simple-wrap">
                 <span class="progress-simple">
-                  45%
+                  <#--
+                  145 %
+                  -->
+                  45 %
                 </span>
               </span>
-              <span class="progress-details-wrap"></span>
-            </span>
+              <span class="progress-details-wrap">
+                Mer detaljerad progress h&auml;r
+              </span>
           </li>
 
           <#list nav_items as nav_item>
@@ -51,7 +49,7 @@
       				<#assign nav_item_attr_data_hotkeytitle = "data-hotkeytitle='" + nav_item.getName() + "'" />
       			</#if>
 
-            <#assign nav_item_css_class = nav_item_css_class + " gn-icon" />
+            <#assign nav_item_css_class = nav_item_css_class + " gb-icon" />
             <#assign iconClass = expandoValueLocalService.getData(company_id, "com.liferay.portal.model.Layout", "CUSTOM_FIELDS", "icon-class", nav_item.getLayout().getPlid(), "")!  />
             <#if iconClass?has_content>
               <#assign nav_item_css_class = nav_item_css_class + " " + iconClass />
@@ -59,7 +57,7 @@
 
             <#assign iconClassExpando  = expandoValueLocalService.getValue(company_id, "com.liferay.portal.model.Layout", "CUSTOM_FIELDS", "icon-class", nav_item.getLayout().getPlid())! />
             <#if iconClassExpando?has_content>
-              <#assign nav_item_css_class = nav_item_css_class + " gn-icon-" + iconClassExpando.getData() />
+              <#assign nav_item_css_class = nav_item_css_class + " gb-icon-" + iconClassExpando.getData() />
             </#if>
 
       			<li ${nav_item_attr_selected} class="${nav_item_css_class}" id="layout_${nav_item.getLayoutId()}" role="presentation">
@@ -70,30 +68,50 @@
       		</#list>
 
           <#if show_dockbar>
-      			<li class="gn-icon gn-icon-dockbar gn-open-all-only">
+      			<li class="gb-icon gb-icon-dockbar gb-open-only">
       				<a class="toggle-dockbar" href="javascript:;">Toggle Dockbar</a>
       			</li>
       		</#if>
 
       		<#if is_signed_in>
-      			<li class="gn-icon gn-icon-sign-out gn-open-all-only">
+      			<li class="gb-icon gb-icon-sign-out gb-open-only">
       				<a href="${sign_out_url}" id="sign-out" rel="nofollow">${sign_out_text}</a>
       			</li>
             <#--
-      			<li class="gn-icon gn-open-all-only">
+      			<li class="gb-icon gb-open-only">
       				<span>
       					Inloggad som: ${user.firstName} ${user.lastName}
       				</span>
       			</li>
             -->
       		<#else>
-      			<li class="gn-icon gn-icon-sign-in gn-open-all-only">
+      			<li class="gb-icon gb-icon-sign-in gb-open-only">
       				<a href="${sign_in_url}" data-redirect="${is_login_redirect_required?string}" id="sign-in" rel="nofollow">${sign_in_text}</a>
       			</li>
       		</#if>
 
+          <#--
+          <div class="site-heading">
+            <h1 class="site-title">
+              <a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
+                <img alt="${logo_description}" src="${site_logo}" />
+                <span class="site-name" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
+                  ${site_name}
+                </span>
+              </a>
+            </h1>
+          </div>
+          -->
+
+
         </ul>
+
       </div>
+
+      <div class="logo">
+        <img src="${images_folder}/theme/logo/vgr-glasogonbidrag.png" alt="${site_name}" />
+      </div>
+
 
     </nav>
 </div>
