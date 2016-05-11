@@ -90,7 +90,11 @@ $menuItemPadding: 10px;
       }
 
       &.user-info {
+        line-height: 1;
+
         > span {
+          background-color: darken($gb-mirage, 5);
+          display: block;
           padding: $menuItemPadding $menuItemPadding;
           visibility: hidden;
 
@@ -109,7 +113,7 @@ $menuItemPadding: 10px;
           text-align: center;
           width: $menuWidthMinimized;
 
-          .progress-done {
+          &.complete {
             background: green; // Should be changed to a better color and added to variables
           }
 

@@ -13,12 +13,10 @@
 
           <li class="progress-wrap">
               <span class="progress-simple-wrap">
-                <span class="progress-simple">
-                  <#--
-                  145 %
-                  -->
-                  45 %
-                </span>
+                <#--
+                145 %
+                -->
+                45 %
               </span>
               <span class="progress-details-wrap">
                 Mer detaljerad progress h&auml;r
@@ -77,32 +75,11 @@
       			<li class="gb-icon gb-icon-sign-out gb-open-only">
       				<a href="${sign_out_url}" id="sign-out" rel="nofollow">${sign_out_text}</a>
       			</li>
-            <#--
-      			<li class="gb-icon gb-open-only">
-      				<span>
-      					Inloggad som: ${user.firstName} ${user.lastName}
-      				</span>
-      			</li>
-            -->
       		<#else>
       			<li class="gb-icon gb-icon-sign-in gb-open-only">
       				<a href="${sign_in_url}" data-redirect="${is_login_redirect_required?string}" id="sign-in" rel="nofollow">${sign_in_text}</a>
       			</li>
       		</#if>
-
-          <#--
-          <div class="site-heading">
-            <h1 class="site-title">
-              <a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-                <img alt="${logo_description}" src="${site_logo}" />
-                <span class="site-name" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-                  ${site_name}
-                </span>
-              </a>
-            </h1>
-          </div>
-          -->
-
 
         </ul>
 
