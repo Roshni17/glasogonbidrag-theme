@@ -106,24 +106,28 @@ $menuItemPadding: 10px;
       }
 
       &.progress-wrap {
+        line-height: 1.1;
+        height: 90px;
+        padding: $menuItemPadding;
 
-        .progress-simple-wrap {
-          display: block;
-          font-weight: bold;
-          text-align: center;
-          width: $menuWidthMinimized;
-
-          &.complete {
-            background: green; // Should be changed to a better color and added to variables
+        .user-progress {
+          .user-progress-simple {
+            display: block;
+            line-height: 70px;
+            width: $menuWidthMinimized - $menuItemPadding - $menuItemPadding;
           }
+          .user-progress-details {
+            display: none;
+          }
+          .user-progress-loading-mask {
+            background: $gb-mirage;
+            width: $menuWidthMinimized - $menuItemPadding - $menuItemPadding;
 
+            &:before {
+              top: 35%;
+            }
+          }
         }
-
-        .progress-details-wrap {
-          display: none;
-          padding: 0 $menuItemPadding;
-        }
-
       }
 
       &.gb-icon {
@@ -209,12 +213,20 @@ $menuItemPadding: 10px;
 
         &.progress-wrap {
 
-          .progress-simple-wrap {
-            display: none;
-          }
+          .user-progress {
 
-          .progress-details-wrap {
-            display: block;
+            .user-progress-simple {
+              display: none;
+            }
+
+            .user-progress-details {
+              display: block;
+            }
+
+            .user-progress-loading-mask {
+              width: 100%;
+            }
+
           }
 
         }

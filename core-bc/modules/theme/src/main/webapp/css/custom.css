@@ -40,6 +40,7 @@ body {
     @import 'partials/atoms/images';
     @import 'partials/atoms/inputs';
 		@import 'partials/atoms/link-btn';
+		@import 'partials/atoms/node-info';
     @import 'partials/atoms/paragraphs';
 		@import 'partials/atoms/table';
 		@import 'partials/atoms/wrapper';
@@ -60,11 +61,11 @@ body {
 		@import 'partials/molecules/portlet-login';
 		@import 'partials/molecules/portlet-navigation';
 		@import 'partials/molecules/top-bar';
+		@import 'partials/molecules/user-progress';
 
 		@import 'partials/organisms/content';
     @import 'partials/organisms/footer';
     @import 'partials/organisms/header';
-		@import 'partials/organisms/side-panel';
 
 		@import 'partials/utilities/development';
 

@@ -23,6 +23,15 @@
 
 <#------ Theme Settings -------------------------------------------------->
 
+<#assign show_user_progress = false />
+
+<#assign theme_setting_show_user_progress = theme_display.getThemeSetting("show-user-progress")! />
+
+<#if theme_setting_show_user_progress = "true">
+	<#assign show_user_progress = true />
+</#if>
+
+
 <#------ Dockbar -------------------------------------------------->
 
 <#assign show_dockbar = false />
@@ -42,6 +51,9 @@
 		</#if>
 
 	</#if>
+
+	<#-- Above does not work on Test. Set always show dockbar when signed in. Should be fixed/debugged. -->
+	<#assign show_dockbar = true />
 
 </#if>
 

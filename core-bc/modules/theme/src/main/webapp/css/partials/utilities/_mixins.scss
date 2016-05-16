@@ -74,7 +74,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
 // Clearfix
 // --------
 // For clearing floats like a boss h5bp.com/q
@@ -299,3 +298,41 @@
   -webkit-order: $value;
   order: $value;
 }
+
+// Spinning Icons
+// --------------------------
+// Spinning Icons
+// --------------------------
+
+@-webkit-keyframes gb-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes gb-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@mixin spin($duration: 2s, $iterationCount: infinite) {
+  @include animation(gb-spin $duration $iterationCount linear);
+}
+
+/*
+.gb-pulse {
+  -webkit-animation: gb-spin 1s infinite steps(8);
+          animation: gb-spin 1s infinite steps(8);
+}
+*/

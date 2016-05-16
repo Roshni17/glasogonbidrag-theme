@@ -22,13 +22,8 @@
 
 ${theme.include(body_top_include)}
 
-<#--
 <#if is_signed_in>
-	<#include "${full_templates_path}/side_panel.ftl" />
-</#if>
--->
-<#if is_signed_in>
-	<#include "${full_templates_path}/side_panel_2.ftl" />
+	<#include "${full_templates_path}/navigation.ftl" />
 </#if>
 
 
@@ -38,12 +33,6 @@ ${theme.include(body_top_include)}
 			<@liferay.dockbar />
 		</div>
 	</#if>
-
-	<#--
-	<#if is_signed_in>
-		<#include "${full_templates_path}/top_bar.ftl" />
-	</#if>
-	-->
 
 	<div class="container-fluid" id="wrapper">
 
@@ -73,10 +62,10 @@ ${theme.include(body_bottom_include)}
 <script type="text/javascript">
 	var jQueryTheme = jQuery.noConflict();
 </script>
-<script type="text/javascript" src="${javascript_folder}/jquery/jquery.big-slide/bigSlide.min.js"></script>
 <script type="text/javascript" src="${javascript_folder}/jquery/jquery.mask/jquery.mask.js"></script>
 <script type="text/javascript" src="${javascript_folder}/jquery/chosen.jquery/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="${javascript_folder}/hotkeys/hotkeys.js"></script>
+<script type="text/javascript" src="${javascript_folder}/jquery/custom/jquery.gb.userprogress.js"></script>
 <script src="${javascript_folder}/jq.js"></script>
 
 

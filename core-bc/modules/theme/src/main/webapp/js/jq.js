@@ -17,12 +17,15 @@
 
     // Run only once
     function init() {
-      //_initBigSlide();
       _initMainMenu();
+      _initUserGoal();
       _initToggleDockbar();
       _registerViewPartialReloadListener();
 
       refreshUI();
+
+
+      //$('body').userGoal();
     }
 
     // Run when data is loaded
@@ -33,7 +36,6 @@
       _initHotkeys();
       _initInputMask();
       _initSelectReplace();
-      //_initUpdateTopBar();
     }
 
     // Private methods
@@ -95,30 +97,6 @@
 
     }
 
-    // Not used anymore (?) if Nexus style menu is used
-    function _initBigSlide() {
-
-      gbJs.bigSlide = $('.navigation-trigger').bigSlide({
-        menu: '.side-panel-maximized',
-        menuWidth: '20.0em'
-      });
-
-    }
-
-    function _initMainMenu() {
-
-      $('.gb-menu-wrapper').mouseover(function(){
-        $(this).addClass('gb-menu-open');
-      });
-
-      $('.gb-menu-wrapper').mouseout(function(){
-        $(this).removeClass('gb-menu-open');
-      });
-
-
-
-    }
-
     function _initHotkeys() {
 
       // Register UI-nodes
@@ -168,6 +146,38 @@
 
     }
 
+    function _initMainMenu() {
+
+      $('.gb-menu-wrapper').mouseover(function(){
+        $(this).addClass('gb-menu-open');
+      });
+
+      $('.gb-menu-wrapper').mouseout(function(){
+        $(this).removeClass('gb-menu-open');
+      });
+
+    }
+
+    function _initUserGoal() {
+
+      //console.log(Liferay);
+      //console.log(Liferay.ThemeDisplay);
+
+      var userProgressWrap = $('.js-user-progress');
+      var userId = Liferay.ThemeDisplay.getUserId();
+      // Temp
+      userId = 20159;
+      var progressUrlBase = '/glasogonbidrag-user-progress-web/user-progress';
+      var progressUrl = progressUrlBase + '/' + userId;
+      //Temp
+      //progressUrl = progressUrl + '/on/2016-05-02';
+
+
+      $('.js-user-progress').userProgress({
+        progressUrl: progressUrl
+      });
+    }
+
     function _initToggleDockbar() {
 
       $('.toggle-dockbar').on('click', function(e) {
@@ -183,15 +193,6 @@
 
         return false;
       });
-
-    }
-
-    // Should be removed
-    function _initUpdateTopBar() {
-
-      if(gbJs.topBarHeading) {
-        $('#topBar h1.page-title').html(gbJs.topBarHeading);
-      }
 
     }
 

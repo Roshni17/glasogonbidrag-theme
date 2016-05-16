@@ -1,14 +1,13 @@
 .wrapper-outer {
   border-top: 5px solid $gb-mirage;
-
   position: relative;
   margin-left: 60px;
-  //margin-left: 0;
+}
+
+.signed-out .wrapper-outer {
+  margin-left: 0;
 }
 
 #wrapper {
-
-  padding: 2em 1em;
-  padding: 2em;
   padding: 1em;
 }
