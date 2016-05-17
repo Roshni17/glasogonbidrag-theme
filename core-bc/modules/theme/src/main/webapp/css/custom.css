@@ -53,6 +53,7 @@ body {
 		@import 'partials/molecules/field-element';
 		@import 'partials/molecules/field-row';
 		@import 'partials/molecules/jquery-chosen';
+		@import 'partials/molecules/jquery-chosen-custom';
 		@import 'partials/molecules/gb-menu';
 		@import 'partials/molecules/gb-tabs';
 		@import 'partials/molecules/grant-section';
