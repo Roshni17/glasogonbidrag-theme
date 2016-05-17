@@ -1,6 +1,7 @@
 #wrapper {
 
-  > .alert {
+  > .alert,
+  > #content > .alert {
     display: none;
   }
 
