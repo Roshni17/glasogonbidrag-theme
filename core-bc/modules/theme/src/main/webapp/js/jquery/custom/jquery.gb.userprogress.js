@@ -1,4 +1,5 @@
 // Plugin based on jQuery Boilerplate https://jqueryboilerplate.com/
+// Plugin requires Handlebar.js to be loaded http://handlebarsjs.com/
 ;( function( $, window, document, undefined ) {
 
 	'use strict';
@@ -6,8 +7,11 @@
 		// Create the defaults once
 		var pluginName = 'userProgress',
 			defaults = {
-        textTodaysGoal: 'Dagens m&aring;l',
-        progressUrl: ''
+				pollerMillis: 10000,
+        progressUrl: '',
+				text: {
+					todaysGoal: 'Dagens mål'
+				}
 			};
 
 		// The actual plugin constructor
@@ -22,6 +26,10 @@
       this.loadMask = null;
 			this._defaults = defaults;
 			this._name = pluginName;
+
+			this.templateSimple = '';
+			this.templateDetails = '';
+
 			this.init();
 		}
 
@@ -31,6 +39,7 @@
       init: function() {
         var instance = this;
 
+				instance.initTemplates();
         instance.initUI();
         instance.getProgress();
 			},
@@ -41,7 +50,7 @@
 
         $(instance.loadMask).show();
 
-        $.getJSON(this.settings.progressUrl)
+        $.getJSON(instance.settings.progressUrl)
           .done(function(data) {
             var dataUserProgress = parseInt(data.progress);
             var dataUserGoal = parseInt(data.goal);
@@ -55,17 +64,20 @@
             instance.userGoal = userGoal;
             instance.userPercentage = userPercentage;
 
-            var simpleHtml = instance.userPercentage + '%';
+            $(instance.progressSimpleElement).html(
+							instance.templateSimple({
+								userPercentage: instance.userPercentage
+							})
+						);
 
-            $(instance.progressSimpleElement).html(simpleHtml);
-
-            var detailsHtml = '<div class="">' + instance.settings.textTodaysGoal + '</div>';
-            detailsHtml = detailsHtml + '<div class="progress-bar"><div class="progress-bar-inner" style="width: ' + instance.userPercentage + '%"></div></div>'
-            detailsHtml = detailsHtml + '<div class="progress-info">' + instance.userProgress.toLocaleString('sv') + ' av ' + instance.userGoal.toLocaleString('sv') + ' (' + instance.userPercentage + '%)' + "</div>";
-
-            $(instance.progressDetailsElement).html(detailsHtml);
-
-            //var userPercentageFake = 99;
+						$(instance.progressDetailsElement).html(
+							instance.templateDetails({
+								labelTodaysGoal: instance.settings.text.todaysGoal,
+								userPercentage: instance.userPercentage,
+								userProgress: instance.userProgress.toLocaleString('sv'),
+								userGoal: instance.userGoal.toLocaleString('sv')
+							})
+						);
 
             if(userPercentage >= 100) {
               $(instance.element).addClass('complete');
@@ -75,20 +87,35 @@
 
             $(instance.loadMask).hide();
 
+						instance.setPollerTimeout();
+
           })
           .fail(function(data) {
             console.log('Fail');
+						instance.setPollerTimeout();
           });
 
       },
 
+			initTemplates: function() {
+				var instance = this;
+
+				var templateSimple = '{{userPercentage}} %';
+
+				var templateDetails = '<div class="">{{labelTodaysGoal}}</div>';
+				templateDetails += '<div class="progress-bar"><div class="progress-bar-inner" style="width: {{userPercentage}}%"></div></div>';
+				templateDetails += '<div class="progress-info">{{userProgress}} av {{userGoal}} ({{userPercentage}}%)</div>';
+
+				instance.templateSimple = Handlebars.compile(templateSimple);
+				instance.templateDetails = Handlebars.compile(templateDetails);
+			},
+
       initUI: function() {
         var instance = this;
-        //$( this.element ).text( text );
 
         var html = '<div class="user-progress-simple"></div>';
-        html = html + '<div class="user-progress-details"></div>';
-        html = html + '<div class="user-progress-loading-mask" style="display: none"></div>';
+        html += '<div class="user-progress-details"></div>';
+        html += '<div class="user-progress-loading-mask" style="display: none"></div>';
 
         $(instance.element).html(html);
 
@@ -105,6 +132,14 @@
         instance.progressDetailsElement = progressDetailsElement;
         instance.loadMask = loadMask;
       },
+
+			setPollerTimeout: function() {
+				var instance = this;
+
+				setTimeout(function(){
+					instance.getProgress();
+				}, instance.settings.pollerMillis);
+			},
 
 			someFunction: function() {
         var instance = this;

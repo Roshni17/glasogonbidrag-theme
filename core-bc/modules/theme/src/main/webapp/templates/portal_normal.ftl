@@ -62,6 +62,8 @@ ${theme.include(body_bottom_include)}
 <script type="text/javascript">
 	var jQueryTheme = jQuery.noConflict();
 </script>
+
+<script type="text/javascript" src="${javascript_folder}/handlebars/handlebars.js"></script>
 <script type="text/javascript" src="${javascript_folder}/jquery/jquery.mask/jquery.mask.js"></script>
 <script type="text/javascript" src="${javascript_folder}/jquery/chosen.jquery/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="${javascript_folder}/hotkeys/hotkeys.js"></script>
