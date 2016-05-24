@@ -139,7 +139,7 @@
       $('.js-input-mask').unmask();
 
       // Personnumber
-      $('.js-input-mask.js-input-mask-personnumber').mask('0000-00-00-0000');
+      $('.js-input-mask.js-input-mask-personnumber').mask('00000000-0000');
 
       // Date
       $('.js-input-mask.js-input-mask-date').mask('0000-00-00');
