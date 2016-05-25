@@ -166,7 +166,7 @@
       var userProgressWrap = $('.js-user-progress');
       var userId = Liferay.ThemeDisplay.getUserId();
       // Temp
-      userId = 20159;
+      //userId = 20159;
       var progressUrlBase = '/glasogonbidrag-user-progress-web/user-progress';
       var progressUrl = progressUrlBase + '/' + userId;
       //Temp
@@ -174,6 +174,7 @@
 
 
       $('.js-user-progress').userProgress({
+        pollerMillis: 100000,
         progressUrl: progressUrl
       });
     }
