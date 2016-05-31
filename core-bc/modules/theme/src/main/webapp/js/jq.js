@@ -148,13 +148,22 @@
 
     function _initMainMenu() {
 
-      $('.gb-menu-wrapper').mouseover(function(){
-        $(this).addClass('gb-menu-open');
+      $('.gb-menu-wrapper').hover(function(){
+        $(this).toggleClass('gb-menu-open');
       });
 
-      $('.gb-menu-wrapper').mouseout(function(){
-        $(this).removeClass('gb-menu-open');
-      });
+      // // Use of menu debug is only for development purpose
+      // var menuDebug = false;
+      //
+      // if(menuDebug) {
+      //   $('.gb-menu-wrapper').addClass('gb-menu-open');
+      // } else {
+      //
+      //   $('.gb-menu-wrapper').hover(function(){
+      //     $(this).toggleClass('gb-menu-open');
+      //   });
+      //
+      // }
 
     }
 
