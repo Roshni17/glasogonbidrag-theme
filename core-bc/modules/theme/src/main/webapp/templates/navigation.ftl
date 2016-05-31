@@ -77,12 +77,11 @@
 
         </ul>
 
-      </div>
+        <div class="logo">
+          <img src="${images_folder}/theme/logo/vgr-glasogonbidrag.png" alt="${site_name}" />
+        </div>
 
-      <div class="logo">
-        <img src="${images_folder}/theme/logo/vgr-glasogonbidrag.png" alt="${site_name}" />
       </div>
-
 
     </nav>
 </div>
