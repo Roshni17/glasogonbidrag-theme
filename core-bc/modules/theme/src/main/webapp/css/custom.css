@@ -45,6 +45,7 @@ body {
 		@import 'partials/atoms/table';
 		@import 'partials/atoms/wrapper';
 
+		@import 'partials/molecules/alert';
 		@import 'partials/molecules/block-navigation';
 		@import 'partials/molecules/box';
 		@import 'partials/molecules/button-row';
@@ -61,6 +62,7 @@ body {
 		@import 'partials/molecules/person-info-row';
 		@import 'partials/molecules/portlet-login';
 		@import 'partials/molecules/portlet-navigation';
+		@import 'partials/molecules/simple-list';
 		@import 'partials/molecules/simple-table';
 		@import 'partials/molecules/top-bar';
 		@import 'partials/molecules/user-progress';

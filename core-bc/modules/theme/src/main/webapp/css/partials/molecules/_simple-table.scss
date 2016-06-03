@@ -4,13 +4,14 @@
   width: 100%;
 
   thead {
-    border-bottom: 1px solid $gb-bombay;
-    border-top: 1px solid $gb-bombay;
+    border-bottom: 1px solid darken($gb-geyser, 10);
+    border-top: 1px solid darken($gb-geyser, 10);
 
     th {
-      border-right: 1px solid rgba($gb-bombay, 0.2);
+      background: tint($gb-linkwater, 60);
+      //border-right: 1px solid $gb-geyser;
       padding: 0.5em 0.5em;
-      
+
       &:last-child {
         border-right: none;
       }
@@ -21,10 +22,10 @@
     vertical-align: top;
 
     tr {
-      border-bottom: 1px solid rgba($gb-bombay, 0.5);
+      border-bottom: 1px solid $gb-geyser;
 
       td {
-        border-right: 1px solid rgba($gb-bombay, 0.2);
+        //border-right: 1px solid $gb-geyser;
         padding: 0.3em 0.5em;
 
         &:last-child {
