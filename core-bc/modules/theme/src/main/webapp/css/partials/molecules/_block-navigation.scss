@@ -10,14 +10,18 @@
     @include flex-wrap(wrap);
 
     li {
-      min-width: 250px;
+      //min-width: 250px;
+      width: 33.3%;
       margin: 0 1em 1em 1em;
+      margin: 0;
+      @include box-sizing(border-box);
 
       a {
         background: $gb-white;
         color: $gb-mirage;
         display: block;
         font-size: 1.1em;
+        margin: 0 1em 1em 1em;
         padding: 2em;
         text-align: center;
         text-decoration: none;

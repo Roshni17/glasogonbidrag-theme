@@ -35,6 +35,7 @@ body {
     @import 'partials/utilities/portlet-overrides';
 
 		@import 'partials/atoms/buttons';
+		@import 'partials/atoms/checkbox';
 		@import 'partials/atoms/container';
     @import 'partials/atoms/headings';
     @import 'partials/atoms/images';
@@ -60,6 +61,7 @@ body {
 		@import 'partials/molecules/grant-section';
 		@import 'partials/molecules/main-navigation';
 		@import 'partials/molecules/person-info-row';
+		@import 'partials/molecules/prescription-section';
 		@import 'partials/molecules/portlet-login';
 		@import 'partials/molecules/portlet-navigation';
 		@import 'partials/molecules/simple-list';
