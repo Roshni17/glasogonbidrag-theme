@@ -36,8 +36,29 @@
   }
 
   &.box-sidebar {
-    //background: rgba($gb-white, 0.5);
     font-size: 0.9em;
+
+    padding: 0;
+
+    .box-hd {
+      border-bottom: 1px solid $gb-alto;
+      padding: 0.5em 0.5em;
+
+      .box-title {
+        font-size: 1.0em;
+        text-transform: uppercase;
+      }
+
+    }
+
+    .box-bd {
+      padding: 1em;
+    }
+
+    .box-hd + .box-bd {
+      margin-top: 0;
+    }
+
   }
 
   &.box-collapsible {
@@ -53,6 +74,17 @@
             right: 0;
         }
 
+      }
+    }
+
+    &.box-sidebar {
+      .box-hd {
+        .box-title {
+          &:after {
+            top: 0.4em;
+            right: 0.5em;
+          }
+        }
       }
     }
 
