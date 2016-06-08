@@ -46,6 +46,7 @@ body {
 		@import 'partials/atoms/table';
 		@import 'partials/atoms/wrapper';
 
+		@import 'partials/molecules/accounting-table';
 		@import 'partials/molecules/alert';
 		@import 'partials/molecules/block-navigation';
 		@import 'partials/molecules/box';
