@@ -4,8 +4,8 @@
 
   .field-element {
     display: inline-block;
+    vertical-align: top;
     @include box-sizing(border-box);
-
   }
 
   &.field-row-2 {
@@ -20,6 +20,32 @@
       }
       &:last-child {
         padding-left: 0.5em;
+      }
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 90%;
+      }
+
+    }
+
+  }
+
+  &.field-row-3 {
+    @include clearfix();
+
+    .field-element {
+      float: left;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      width: 33%;
+
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
       }
 
       input[type="text"],

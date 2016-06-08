@@ -44,7 +44,8 @@
       }
   }
 
-  &.chosen-container-active.chosen-with-drop {
+  &.chosen-container-active {
+
     background: $gb-white;
     outline: 0;
     @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6));
@@ -55,10 +56,13 @@
       outline: 0;
     }
 
-    .chosen-drop {
-      background: $gb-white;
-      border-color: rgba(82, 168, 236, 0.8);
-      outline: 0;
+    &.chose-with-drop {
+
+      .chosen-drop {
+        background: $gb-white;
+        border-color: rgba(82, 168, 236, 0.8);
+        outline: 0;
+      }
     }
 
   }
