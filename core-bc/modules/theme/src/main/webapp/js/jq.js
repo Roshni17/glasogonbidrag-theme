@@ -36,9 +36,14 @@
       _initHotkeys();
       _initInputMask();
       _initSelectReplace();
+      _initTriggerOnEnter();
     }
 
     // Private methods
+
+    function _escapeIdForJsf(id) {
+      return id.replace(/:/g,"\\:").replace(/\./g,"\\.");
+    }
 
     function _focusOnLoad() {
 
@@ -164,6 +169,34 @@
       //   });
       //
       // }
+
+    }
+
+    function _initTriggerOnEnter() {
+
+      var triggerOnEnterNodes = $('[data-triggeronenter]');
+
+      triggerOnEnterNodes.off('keydown');
+
+      triggerOnEnterNodes.keydown(function(event) {
+        if(event.which == '13') {
+          event.preventDefault();
+
+          var triggerId = $(this).data('triggeronenter');
+          triggerId = _escapeIdForJsf(triggerId);
+          var triggerNode = $('#' + triggerId);
+
+          if(triggerNode.length) {
+            triggerNode.click();
+          } else {
+            // Do nothing
+          }
+
+          return false;
+        }
+      });
+
+
 
     }
 
