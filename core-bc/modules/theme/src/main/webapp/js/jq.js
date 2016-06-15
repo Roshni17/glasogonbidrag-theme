@@ -36,6 +36,7 @@
       _initHotkeys();
       _initInputMask();
       _initSelectReplace();
+      _initSelectInputContent();
       _initTriggerOnEnter();
     }
 
@@ -144,7 +145,65 @@
       $('.js-input-mask').unmask();
 
       // Personnumber
-      $('.js-input-mask.js-input-mask-personnumber').mask('00000000-0000');
+      var personNumberFields = $('.js-input-mask.js-input-mask-personnumber');
+      personNumberFields.attr('maxlength', 13);
+      personNumberFields.keyup(function(event) {
+        var field = $(event.currentTarget);
+        var value = field.val();
+        var length = value.length;
+
+        if(length == 7) {
+          var mainNumber = value.slice(0, -1);
+          var lastNumber = value.slice(-1);
+
+          if(lastNumber != '-') {
+            var valueNew = mainNumber + "-" + lastNumber;
+            field.val(valueNew);
+          }
+        }
+
+        else if(length == 12) {
+          var trimmedValue = value.replace(/-/g, '');
+
+          var mainNumber = trimmedValue.slice(0, 8);
+          var lastNumber = trimmedValue.slice(8, trimmedValue.length);
+
+          if(lastNumber != '-') {
+            var valueNew = mainNumber + "-" + lastNumber;
+            field.val(valueNew);
+          }
+        }
+
+      });
+
+
+      // var pnMaskBehaviour = function(val) {
+      //   return val.replace(/-/g, '').length === 10 ? '000000-0000' : '00000000-0000';
+      // }
+      //
+      // var pnMaskOptions = {
+      //   onKeyPress: function(val, e, field, options) {
+      //     field.mask(pnMaskBehaviour.apply({}, arguments), pnMaskOptions);
+      //   }
+      // };
+      //
+      // $('.js-input-mask.js-input-mask-personnumber').mask(pnMaskBehaviour, pnMaskOptions);
+
+      // var personalNumberMasks = ['000000-0000', '00000000-0000'];
+      // var personalNumberMaskOptions = {
+      //   onKeyPress: function(fieldData, e, field, personalNumberMaskOptions) {
+      //
+      //     //console.log(fieldData.length);
+      //
+      //     var mask = (fieldData.length > 11 ? personalNumberMasks[1] : personalNumberMasks[0]);
+      //     //$(field).unmask();
+      //     $(field).mask(mask, personalNumberMaskOptions);
+      //
+      //   }
+      // };
+      //
+      // $('.js-input-mask.js-input-mask-personnumber').mask(personalNumberMasks[0], personalNumberMaskOptions);
+
 
       // Date
       $('.js-input-mask.js-input-mask-date').mask('0000-00-00');
@@ -181,6 +240,13 @@
       triggerOnEnterNodes.keydown(function(event) {
         if(event.which == '13') {
           event.preventDefault();
+
+          var currentTarget = $(event.currentTarget);
+
+          // If radio - select option before submit
+          if(currentTarget.is(':radio')) {
+            currentTarget.click();
+          }
 
           var triggerId = $(this).data('triggeronenter');
           triggerId = _escapeIdForJsf(triggerId);
@@ -237,6 +303,13 @@
         return false;
       });
 
+    }
+
+    function _initSelectInputContent() {
+      var inputs = $('.js-select-on-render');
+      if(inputs.length > 0) {
+        $(inputs[0]).select();
+      }
     }
 
     function _initSelectReplace() {

@@ -30,6 +30,23 @@
     margin-top: 1em;
   }
 
+  .simple-table {
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-bottom: none;
+    }
+  }
+
+  .button-row {
+    background: tint($gb-linkwater, 60);
+    background: $gb-white;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+    margin: 0 -1em -1em -1em;
+    padding: 10px 0;
+  }
+
 
   &.box-tight {
     padding: 0;
