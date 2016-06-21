@@ -6,6 +6,12 @@
       gbJs = {};
     }
 
+    var KEY_ENTER = '13';
+    var KEY_ARROW_LEFT = '37';
+    var KEY_ARROW_UP = '38';
+    var KEY_ARROW_RIGHT = '39';
+    var KEY_ARROW_DOWN = '40';
+
     gbJs.registeredHotkeys = {};
     gbJs.debugMode = true;
     //gbJs.debugMode = false;
@@ -35,6 +41,7 @@
       _initBoxCollapsible();
       _initHotkeys();
       _initInputMask();
+      _initPrescriptionCheckbox();
       _initSelectReplace();
       _initSelectInputContent();
       _initTriggerOnEnter();
@@ -91,16 +98,20 @@
 
     function _initBoxCollapsible() {
 
-      $('.js-box-collapsible .box-title').on('click', function(e) {
-        //var box = $(this).closest('.js-box-collapsible');
-        //console.log('box: ', box);
-        $(this).closest('.js-box-collapsible').toggleClass('box-collapsed');
+      // Reset
+      $('.js-box-collapsible').removeClass('box-collapsible');
+      $('.js-box-collapsible .box-title').off('click', _onBoxCollapsibleClick);
 
-      });
+      // Bind click
+      $('.js-box-collapsible .box-title').on('click', _onBoxCollapsibleClick);
 
-
+      // Add class
       $('.js-box-collapsible').addClass('box-collapsible');
 
+    }
+
+    function _onBoxCollapsibleClick(e) {
+      $(this).closest('.js-box-collapsible').toggleClass('box-collapsed');
     }
 
     function _initHotkeys() {
@@ -238,7 +249,7 @@
       triggerOnEnterNodes.off('keydown');
 
       triggerOnEnterNodes.keydown(function(event) {
-        if(event.which == '13') {
+        if(event.which == KEY_ENTER) {
           event.preventDefault();
 
           var currentTarget = $(event.currentTarget);
@@ -267,9 +278,6 @@
     }
 
     function _initUserGoal() {
-
-      //console.log(Liferay);
-      //console.log(Liferay.ThemeDisplay);
 
       var userProgressWrap = $('.js-user-progress');
       var userId = Liferay.ThemeDisplay.getUserId();
@@ -302,6 +310,48 @@
 
         return false;
       });
+
+    }
+
+    function _initPrescriptionCheckbox() {
+
+      var prescriptionCheckboxes = $('.js-prescription-checkbox');
+
+
+      prescriptionCheckboxes.off('keydown');
+
+      prescriptionCheckboxes.keydown(function(event) {
+
+        var currentTarget = $(event.currentTarget);
+        var currentCheckbox = $(currentTarget[0]);
+
+
+        if(event.which == KEY_ARROW_UP) {
+          var prevCheckbox = currentTarget.closest('.prescription-section').prev('.prescription-section').find('.js-prescription-checkbox');
+          prevCheckbox.focus();
+        }
+
+        else if(event.which == KEY_ARROW_DOWN) {
+          var nextCheckbox = currentTarget.closest('.prescription-section').next('.prescription-section').find('.js-prescription-checkbox');
+          nextCheckbox.focus();
+        }
+
+        else if(event.which == KEY_ARROW_RIGHT) {
+          //console.log(currentCheckbox.is(':checked'));
+          if(currentCheckbox.is(':checked')) {
+            var firstDetailsField = currentTarget.closest('.prescription-section-main').next('.prescription-section-fields').find('.prescription-section-fieldset:first').find('.prescription-section-field:first').find('input');
+            firstDetailsField.focus();
+          }
+
+        }
+
+        else if(event.which == KEY_ENTER) {
+          currentTarget.click();
+        }
+
+
+      });
+
 
     }
 

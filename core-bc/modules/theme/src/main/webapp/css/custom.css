@@ -39,6 +39,7 @@ body {
 		@import 'partials/atoms/container';
 		@import 'partials/atoms/form';
     @import 'partials/atoms/headings';
+		@import 'partials/atoms/icon-link';
     @import 'partials/atoms/images';
     @import 'partials/atoms/inputs';
 		@import 'partials/atoms/link-btn';

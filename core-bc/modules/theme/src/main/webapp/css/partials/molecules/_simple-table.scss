@@ -11,6 +11,11 @@
       background: tint($gb-linkwater, 60);
       //border-right: 1px solid $gb-geyser;
       padding: 0.5em 0.5em;
+      text-align: left;
+
+      &.number {
+        text-align: right;
+      }
 
       &:last-child {
         border-right: none;
@@ -27,6 +32,7 @@
       td {
         //border-right: 1px solid $gb-geyser;
         padding: 0.3em 0.5em;
+        text-align: left;
 
         &:last-child {
           border-right: none;
