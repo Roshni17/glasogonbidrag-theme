@@ -17,7 +17,7 @@
     div {
       width: 30px;
       b {
-        background: none;
+        background: none !important;
         &:after {
           @include iconfont();
           content: $content-triangle-down;
