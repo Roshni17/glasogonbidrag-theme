@@ -1,13 +1,18 @@
 .icon-link {
 
+  color: $gb-emperor;
+
+  &:hover {
+    color: $gb-mineshaft;
+    text-decoration: none;
+  }
+
   &:before {
     @include iconfont();
-    color: $gb-emperor;
     content: '';
     text-decoration: none;
 
     &:hover {
-      color: $gb-mineshaft;
       text-decoration: none;
     }
   }

@@ -49,13 +49,14 @@ $gb-graydusty:	#999;
 $gb-silver:		  #ccc;
 $gb-alto:		    #ddd;
 $gb-gallery:		#eee;
+$gb-wildsand:   #f4f4f4;
 
 $gb-bombay: #afb1b8;
 
 
 // Colors
 // -------------------------
-$bg:					     $gb-catskill-white;
+$bg:					     $gb-white;
 $text-color:	     $textColor; //From _aui_variables
 
 $heading-color:	   $gb-mineshaft;
@@ -90,7 +91,7 @@ $font-weight-ultralight: 	100;
 // Padding and sizes
 // -------------------------
 
-$default-border-radius:		2px; //Compass named default variable.
+$default-border-radius:		3px; //Compass named default variable.
 
 // Content (font-awesome)
 // -------------------------
@@ -104,8 +105,11 @@ $content-long-arrow-right: "\f178";
 $content-long-arrow-up: "\f176";
 $content-long-arrow-down: "\f175";
 
-$content-triangle-down: "\f0dd";
-$content-triangle-up: "\f0de";
+$content-caret-down: "\f0d7";
+$content-caret-up: "\f0d8";
+$content-caret-left: "\f0d9";
+$content-caret-right: "\f0da";
+
 
 $content-bars: "\f0c9";
 
@@ -125,6 +129,7 @@ $content-database: "\f1c0";
 $content-exclamation-triangle: "\f071";
 $content-home: "\f015";
 
+$content-link: "\f0c1";
 $content-search: "\f002";
 $content-sign-in: "\f090";
 $content-sign-out: "\f08b";

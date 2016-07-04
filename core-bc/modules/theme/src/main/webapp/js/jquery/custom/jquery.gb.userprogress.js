@@ -102,9 +102,13 @@
 
 				var templateSimple = '{{userPercentage}} %';
 
-				var templateDetails = '<div class="">{{labelTodaysGoal}}</div>';
+				// var templateDetails = '<div class="">{{labelTodaysGoal}}</div>';
+				// templateDetails += '<div class="progress-bar"><div class="progress-bar-inner" style="width: {{userPercentage}}%"></div></div>';
+				// templateDetails += '<div class="progress-info">{{userProgress}} av {{userGoal}} ({{userPercentage}}%)</div>';
+				var templateDetails = '<div class="">{{labelTodaysGoal}}: <span class="progress-info">{{userProgress}} av {{userGoal}} ({{userPercentage}}%)</span></div>';
 				templateDetails += '<div class="progress-bar"><div class="progress-bar-inner" style="width: {{userPercentage}}%"></div></div>';
-				templateDetails += '<div class="progress-info">{{userProgress}} av {{userGoal}} ({{userPercentage}}%)</div>';
+				//templateDetails += '<div class="progress-info">{{userProgress}} av {{userGoal}} ({{userPercentage}}%)</div>';
+
 
 				instance.templateSimple = Handlebars.compile(templateSimple);
 				instance.templateDetails = Handlebars.compile(templateDetails);

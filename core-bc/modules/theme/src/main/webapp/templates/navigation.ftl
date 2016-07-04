@@ -5,12 +5,6 @@
 
         <ul class="gb-menu">
 
-          <li class="user-info">
-            <span>
-                Inloggad som: <span class="username">${user_name}</span>
-            </span>
-          </li>
-
           <#if show_user_progress>
             <li class="progress-wrap">
               <div class="user-progress js-user-progress"></div>
@@ -69,6 +63,11 @@
       			<li class="gb-icon gb-icon-sign-out gb-open-only">
       				<a href="${sign_out_url}" id="sign-out" rel="nofollow">${sign_out_text}</a>
       			</li>
+            <li class="user-info">
+              <span>
+                  Inloggad som: <span class="username">${user_name}</span>
+              </span>
+            </li>
       		<#else>
       			<li class="gb-icon gb-icon-sign-in gb-open-only">
       				<a href="${sign_in_url}" data-redirect="${is_login_redirect_required?string}" id="sign-in" rel="nofollow">${sign_in_text}</a>

@@ -336,3 +336,58 @@
           animation: gb-spin 1s infinite steps(8);
 }
 */
+
+// Grow
+// --------------------------
+// Used for expanding with unknown height
+// https://jdsteinbach.com/css/snippet-animate-display-transform/
+// --------------------------
+@keyframes grow {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    @include transform(scale(0));
+  }
+  100% {
+    opacity: 1;
+    @include transform(scale(1));
+  }
+}
+
+@keyframes growX {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    @include transform(scaleX(0));
+  }
+  100% {
+    opacity: 1;
+    @include transform(scaleX(1));
+  }
+}
+
+
+@keyframes growY {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    @include transform(scaleY(0));
+  }
+  100% {
+    opacity: 1;
+    @include transform-origin(50%, 0);
+    @include transform(scaleY(1));
+  }
+}

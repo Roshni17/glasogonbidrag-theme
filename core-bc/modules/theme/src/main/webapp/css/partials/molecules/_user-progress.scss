@@ -27,13 +27,13 @@
       background: $gb-white;
       display: block;
       padding: 1px;
-      margin: 7px 0;
+      margin: 7px 0 0 0;
 
       @include border-radius();
 
       .progress-bar-inner {
         background: $gb-green;
-        height: 12px;
+        height: 10px;
         width: auto;
       }
 

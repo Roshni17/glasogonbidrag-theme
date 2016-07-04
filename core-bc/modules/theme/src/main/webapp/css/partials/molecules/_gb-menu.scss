@@ -107,7 +107,9 @@ $menuItemPadding: 10px;
 
       &.progress-wrap {
         line-height: 1.1;
-        height: 90px;
+        // Start test
+        height: 70px;
+        // End test
         padding: $menuItemPadding;
 
         .user-progress {

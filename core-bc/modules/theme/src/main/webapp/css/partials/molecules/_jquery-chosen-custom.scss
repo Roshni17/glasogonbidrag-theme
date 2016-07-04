@@ -20,7 +20,7 @@
         background: none !important;
         &:after {
           @include iconfont();
-          content: $content-triangle-down;
+          content: $content-caret-down;
           display: block;
           height: 100%;
           padding: 4px 4px;

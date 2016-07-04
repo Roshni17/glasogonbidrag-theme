@@ -39,6 +39,7 @@
     function refreshUI() {
       //_focusOnLoad();
       _initBoxCollapsible();
+      _initChipCollapsible();
       _initHotkeys();
       _initInputMask();
       _initPrescriptionCheckbox();
@@ -112,6 +113,26 @@
 
     function _onBoxCollapsibleClick(e) {
       $(this).closest('.js-box-collapsible').toggleClass('box-collapsed');
+      $(this).closest('.js-box-collapsible').toggleClass('box-expanded');
+    }
+
+    function _initChipCollapsible() {
+
+      // Reset
+      $('.js-chip-collapsible').removeClass('chip-collapsible');
+      $('.js-chip-collapsible .chip-hd').off('click', _onChipCollapsibleClick);
+
+      // Bind click
+      $('.js-chip-collapsible .chip-hd').on('click', _onChipCollapsibleClick);
+
+      // Add class
+      $('.js-chip-collapsible').addClass('chip-collapsible');
+
+    }
+
+    function _onChipCollapsibleClick(e) {
+      $(this).closest('.js-chip-collapsible').toggleClass('chip-collapsed');
+      $(this).closest('.js-chip-collapsible').toggleClass('chip-expanded');
     }
 
     function _initHotkeys() {
@@ -227,8 +248,8 @@
         $(this).toggleClass('gb-menu-open');
       });
 
-      // // Use of menu debug is only for development purpose
-      // var menuDebug = false;
+      // Use of menu debug is only for development purpose
+      // var menuDebug = true;
       //
       // if(menuDebug) {
       //   $('.gb-menu-wrapper').addClass('gb-menu-open');

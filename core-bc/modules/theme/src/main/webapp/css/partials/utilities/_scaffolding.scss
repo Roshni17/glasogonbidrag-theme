@@ -11,3 +11,49 @@
 		padding: 50px;
 	}
 }
+
+// Start test
+.glasogonbidrag-portlet {
+
+	.gb-full-width-wrap {
+		// "Reset" wrapper padding
+		margin: -20px;
+
+		.row-fluid {
+
+			.span3,
+			.span6 {
+				height: 100vh;
+			}
+
+			.span3 {
+				background: $gb-wildsand;
+				//Test
+				margin-left: 0;
+				margin-right: 0;
+				width: 25%;
+
+				&:first-child {
+					border-right: 1px solid $gb-alto;
+				}
+
+				&:last-child {
+					border-left: 1px solid $gb-alto;
+				}
+			}
+
+			.span6 {
+				background: $gb-white;
+				margin-left: 0;
+				margin-right: 0;
+				padding: 0 2.5641%;
+				padding: 0 1em;
+				width: 50%;
+			}
+
+		}
+
+	}
+
+}
+// End test
