@@ -75,6 +75,8 @@ body {
 		@import 'partials/molecules/simple-list';
 		@import 'partials/molecules/simple-table';
 		@import 'partials/molecules/top-bar';
+		@import 'partials/molecules/ui-datatable';
+		@import 'partials/molecules/ui-paginator';
 		@import 'partials/molecules/user-progress';
 
 		@import 'partials/organisms/content';

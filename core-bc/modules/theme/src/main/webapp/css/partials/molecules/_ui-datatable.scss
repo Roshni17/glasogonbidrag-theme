@@ -1,0 +1,79 @@
+.ui-datatable {
+
+  thead {
+    th {
+      background: $gb-gallery;
+      border-color: $gb-alto;
+      color: $gb-mineshaft;
+
+      &.ui-state-hover {
+        background: $gb-gallery;
+        border-color: $gb-boulder;
+      }
+
+      .ui-sortable-column-icon {
+        background: transparent;
+        display: inline-block;
+        line-height: 1.0;
+        text-indent: 0;
+
+        &:after {
+          color: $gb-mineshaft;
+          display: inline-block;
+          content: $content-icon-unsorted;
+          height: 16px;
+          width: 16px;
+          @include iconfont(0.8em);
+        }
+
+        &.ui-icon-triangle-1-n:after {
+          content: $content-icon-sort-asc;
+        }
+
+        &.ui-icon-triangle-1-s:after {
+          content: $content-icon-sort-desc;
+        }
+
+      }
+
+      .ui-column-filter {
+
+        &.ui-inputfield {
+          &.ui-state-default {
+            background: $gb-white;
+            border: 1px solid $gb-silver;
+            color: $gb-mineshaft;
+            font-size: 0.9em;
+            font-weight: normal;
+            line-height: 1.0;
+            @include border-radius();
+            @include box-shadow(none);
+          }
+          &.ui-state-hover {
+            border: 1px solid $gb-graydusty;
+          }
+          &.ui-state-focus {
+            border: 1px solid $gb-graydusty;
+          }
+        }
+      }
+
+    }
+  }
+
+  tbody {
+    border-color: $gb-alto;
+    td {
+      a {
+        color: $gb-mineshaft;
+        text-decoration: underline;
+
+        &:hover {
+          color: $gb-mineshaft;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+}
