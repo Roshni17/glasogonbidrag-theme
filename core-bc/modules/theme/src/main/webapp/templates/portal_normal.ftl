@@ -12,6 +12,7 @@
 
 	<script src="${javascript_folder}/radio/radio.min.js"></script>
 	<script src="${javascript_folder}/pojs.js"></script>
+	<script src="${javascript_folder}/chart.js/Chart.bundle.js"></script>
 
 	${theme.include(top_head_include)}
 </head>

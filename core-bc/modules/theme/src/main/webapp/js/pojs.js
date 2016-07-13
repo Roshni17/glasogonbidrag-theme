@@ -115,7 +115,5 @@ function bindToggleMyApplicationNav() {
 }
 
 function ajaxComplete(data) {
-	if (data.status === 'success') {
-		radio('viewPartialReload').broadcast();
-	}
+	radio('viewPartialReload').broadcast();
 }

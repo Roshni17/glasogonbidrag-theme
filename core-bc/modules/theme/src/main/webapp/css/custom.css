@@ -65,6 +65,7 @@ body {
 		@import 'partials/molecules/gb-radio-input';
 		@import 'partials/molecules/gb-tabs';
 		@import 'partials/molecules/grant-section';
+		@import 'partials/molecules/kpi';
 		@import 'partials/molecules/labeled-list';
 		@import 'partials/molecules/main-navigation';
 		@import 'partials/molecules/msg-wrap';
