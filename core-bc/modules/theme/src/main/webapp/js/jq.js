@@ -137,6 +137,13 @@
 
     function _initHotkeys() {
 
+      var allowHotkeys = $('body').hasClass('js-allow-hotkeys');
+
+      // Only continue if hotkeys are allowed
+      if(!allowHotkeys) {
+        return;
+      }
+
       // Register UI-nodes
       var hotkeyNodes = $('[data-hotkey]');
 

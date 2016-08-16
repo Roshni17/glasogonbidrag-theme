@@ -31,6 +31,19 @@
 	<#assign show_user_progress = true />
 </#if>
 
+<#assign allow_hotkeys = false />
+
+<#assign theme_setting_allow_hotkeys = theme_display.getThemeSetting("allow-hotkeys")! />
+
+<#if theme_setting_allow_hotkeys = "true">
+	<#assign allow_hotkeys = true />
+</#if>
+
+<#------ Hotkeys -------------------------------------------------->
+
+<#if allow_hotkeys>
+	<#assign css_class = css_class + " js-allow-hotkeys" />
+</#if>
 
 <#------ Dockbar -------------------------------------------------->
 
