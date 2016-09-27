@@ -63,7 +63,7 @@
       			<li class="gb-icon gb-icon-sign-out gb-open-only">
       				<a href="${sign_out_url}" id="sign-out" rel="nofollow">${sign_out_text}</a>
       			</li>
-            <li class="user-info">
+            <li class="user-info gb-open-only">
               <span>
                   Inloggad som: <span class="username">${user_name}</span>
               </span>
