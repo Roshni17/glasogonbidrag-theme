@@ -23,12 +23,15 @@
 
     // Run only once
     function init() {
+      _initLoginPage();
       _initMainMenu();
       _initUserGoal();
       _initToggleDockbar();
       _registerViewPartialReloadListener();
 
       refreshUI();
+
+
 
 
       //$('body').userGoal();
@@ -247,6 +250,21 @@
       // Date
       $('.js-input-mask.js-input-mask-date').mask('0000-00-00');
 
+    }
+
+    function _initLoginPage() {
+      var isLoginPage = $('body').hasClass('js-is-login-page');
+      var isSignedOut = $('body').hasClass('signed-out');
+
+      var emailFieldId = '_58_login';
+      var emailFieldIdSelector = '#' + emailFieldId;
+
+      if(isLoginPage && isSignedOut) {
+        var emailField = $(emailFieldIdSelector);
+        if(emailField.size() > 0 && Liferay.Util) {
+            Liferay.Util.focusFormField(emailFieldIdSelector);
+        }
+      }
     }
 
     function _initMainMenu() {

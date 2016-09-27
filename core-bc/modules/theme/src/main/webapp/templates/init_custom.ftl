@@ -39,10 +39,24 @@
 	<#assign allow_hotkeys = true />
 </#if>
 
+<#assign is_login_page = false />
+
+<#assign theme_setting_is_login_page = theme_display.getThemeSetting("is-login-page")! />
+
+<#if theme_setting_is_login_page = "true">
+	<#assign is_login_page = true />
+</#if>
+
 <#------ Hotkeys -------------------------------------------------->
 
 <#if allow_hotkeys>
 	<#assign css_class = css_class + " js-allow-hotkeys" />
+</#if>
+
+<#------ Login page -------------------------------------------------->
+
+<#if is_login_page>
+	<#assign css_class = css_class + " js-is-login-page" />
 </#if>
 
 <#------ Dockbar -------------------------------------------------->

@@ -13,6 +13,7 @@
 			<setting configurable="true" key="portlet-setup-show-borders-default" type="checkbox" value="false" />
 			<setting configurable="true" key="show-user-progress" type="checkbox" value="false" />
 			<setting configurable="true" key="allow-hotkeys" type="checkbox" value="true" />
+			<setting configurable="true" key="is-login-page" type="checkbox" value="false" />
 		</settings>
 
 	</theme>
