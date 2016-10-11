@@ -1,23 +1,7 @@
 .grant-section {
 
-  border: 1px solid rgba($gb-bombay, 0.5);
-  border-width: 0 0 1px 0;
-
   margin: 0;
   padding: 0.3em 0;
-
-  &:first-child {
-    padding-top: 0;
-  }
-
-  &:last-child {
-    border-bottom-width: 0;
-    padding-bottom: 0;
-  }
-
-  // Start Test
-  border: 0;
-  // End Test
 
   .grant-section-output {
     padding-right: 70px;
