@@ -49,6 +49,9 @@
         text-align: right;
       }
 
+      &.chip-hd-item-short {
+        @include flex(0.5);
+      }
 
       &:last-child {
         border-right-width: 0;
