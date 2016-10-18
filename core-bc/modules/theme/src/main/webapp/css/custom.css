@@ -61,6 +61,7 @@ body {
 		@import 'partials/molecules/field-row';
 		@import 'partials/molecules/jquery-chosen';
 		@import 'partials/molecules/jquery-chosen-custom';
+		@import 'partials/molecules/gb-ajax-mask';
 		@import 'partials/molecules/gb-invoice-hd';
 		@import 'partials/molecules/gb-list';
 		@import 'partials/molecules/gb-menu';

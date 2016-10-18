@@ -125,17 +125,17 @@ function jsfAjaxEventHandler(xhr, portletNamespace) {
 	var xhrStatus = xhr.status;
 	var portletNode = document.getElementById('p_p_id' + portletNamespace);
 
+	var ajaxMasks = document.getElementsByClassName('gb-ajax-mask');
+	var ajaxMask = ajaxMasks[0];
+
 	switch(xhrStatus) {
 			case 'begin':
-					// Start mask here
+					addCssClass(ajaxMask, 'active');
 					break;
 			case 'complete':
-					// Stop mask here
-					//console.log('jsfAjaxEventHandler - complete');
+					removeCssClass(ajaxMask, 'active');
 					break;
 			case 'success':
-					//console.log('Will do viewPartialReload with jsfAjaxEventHandler');
-					//console.log('jsfAjaxEventHandler - success');
 					radio('viewPartialReload').broadcast();
 					break;
 	}

@@ -29,6 +29,7 @@ ${theme.include(body_top_include)}
 
 
 <div class="wrapper-outer push">
+	<div class="gb-ajax-mask"></div>
 	<#if show_dockbar>
 		<div class="dockbar-wrap">
 			<@liferay.dockbar />
