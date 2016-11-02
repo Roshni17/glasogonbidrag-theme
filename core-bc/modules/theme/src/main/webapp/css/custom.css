@@ -81,6 +81,8 @@ body {
 		@import 'partials/molecules/top-bar';
 		@import 'partials/molecules/ui-datatable';
 		@import 'partials/molecules/ui-paginator';
+		@import 'partials/molecules/ui-selectonemenu';
+		@import 'partials/molecules/ui-selectonemenu-panel';
 		@import 'partials/molecules/user-progress';
 
 		@import 'partials/organisms/content';

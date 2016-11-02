@@ -5,10 +5,14 @@
       background: $gb-gallery;
       border-color: $gb-alto;
       color: $gb-mineshaft;
+      @include box-shadow(none);
 
       &.ui-state-hover {
         background: $gb-gallery;
+        background: $gb-alto;
         border-color: $gb-boulder;
+        border-color: $gb-alto;
+        @include box-shadow(none);
       }
 
       .ui-sortable-column-icon {
