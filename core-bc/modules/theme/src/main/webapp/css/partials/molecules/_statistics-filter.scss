@@ -1,0 +1,16 @@
+
+.statistics-filter-wrap {
+
+  @include clearfix();
+
+  .statistics-filter-item {
+    float: left;
+    margin-right: 20px;
+
+    .link-btn {
+      margin-top: 30px;
+    }
+
+  }
+
+}

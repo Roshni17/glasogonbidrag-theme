@@ -78,6 +78,7 @@ body {
 		@import 'partials/molecules/portlet-navigation';
 		@import 'partials/molecules/simple-list';
 		@import 'partials/molecules/simple-table';
+		@import 'partials/molecules/statistics-filter';
 		@import 'partials/molecules/top-bar';
 		@import 'partials/molecules/ui-datatable';
 		@import 'partials/molecules/ui-paginator';
