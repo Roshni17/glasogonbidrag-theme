@@ -80,10 +80,14 @@ body {
 		@import 'partials/molecules/simple-table';
 		@import 'partials/molecules/statistics-filter';
 		@import 'partials/molecules/top-bar';
+		@import 'partials/molecules/ui-calendar';
 		@import 'partials/molecules/ui-datatable';
+		@import 'partials/molecules/ui-datepicker';
 		@import 'partials/molecules/ui-paginator';
+		@import 'partials/molecules/ui-selectonebutton';
 		@import 'partials/molecules/ui-selectonemenu';
 		@import 'partials/molecules/ui-selectonemenu-panel';
+		@import 'partials/molecules/ui-slider';
 		@import 'partials/molecules/user-progress';
 
 		@import 'partials/organisms/content';

@@ -34,6 +34,7 @@
 
       &.ui-icon-triangle-1-s {
         background: transparent;
+        text-align: center;
         &:before {
           @include iconfont(1.0em);
           content: $content-caret-down;

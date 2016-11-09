@@ -71,11 +71,6 @@
     tr {
       td {
 
-        &.number,
-        &.currency {
-          text-align: right;
-        }
-
         a {
           color: $gb-mineshaft;
           text-decoration: underline;
@@ -112,7 +107,31 @@
 
     }
 
+  }
 
+  tfoot {
+    tr {
+      &.total-row {
+        font-weight: bold;
+      }
+
+      td {
+        background: $gb-gallery;
+        border-color: $gb-alto;
+        color: $gb-mineshaft;
+        text-align: left;
+
+        &.ui-state-default {
+          text-shadow: none;
+          @include box-shadow(none);
+        }
+      }
+    }
+  }
+
+  .number,
+  .currency {
+    text-align: right;
   }
 
 }
