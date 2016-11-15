@@ -66,6 +66,7 @@ body {
 		@import 'partials/molecules/gb-list';
 		@import 'partials/molecules/gb-menu';
 		@import 'partials/molecules/gb-radio-input';
+		@import 'partials/molecules/gb-table-filter';
 		@import 'partials/molecules/gb-tabs';
 		@import 'partials/molecules/grant-section';
 		@import 'partials/molecules/kpi';

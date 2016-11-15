@@ -10,9 +10,7 @@
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<script src="${javascript_folder}/radio/radio.min.js"></script>
-	<script src="${javascript_folder}/pojs.js"></script>
-	<script src="${javascript_folder}/chart.js/Chart.bundle.js"></script>
+	<#include "${full_templates_path}/theme_js_head.ftl" />
 
 	${theme.include(top_head_include)}
 </head>
@@ -60,18 +58,7 @@ ${theme.include(body_top_include)}
 
 ${theme.include(body_bottom_include)}
 
-<script type="text/javascript" src="${javascript_folder}/jquery/jquery.min.js"></script>
-<script type="text/javascript">
-	var jQueryTheme = jQuery.noConflict();
-</script>
-
-<script type="text/javascript" src="${javascript_folder}/handlebars/handlebars.js"></script>
-<script type="text/javascript" src="${javascript_folder}/jquery/jquery.mask/jquery.mask.js"></script>
-<script type="text/javascript" src="${javascript_folder}/jquery/chosen.jquery/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="${javascript_folder}/hotkeys/hotkeys.js"></script>
-<script type="text/javascript" src="${javascript_folder}/jquery/custom/jquery.gb.userprogress.js"></script>
-<script src="${javascript_folder}/jq.js"></script>
-
+<#include "${full_templates_path}/theme_js_bottom.ftl" />
 
 ${theme.include(bottom_include)}
 

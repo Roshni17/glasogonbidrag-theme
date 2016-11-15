@@ -5,6 +5,7 @@
       background: $gb-gallery;
       border-color: $gb-alto;
       color: $gb-mineshaft;
+      vertical-align: top;
       @include box-shadow(none);
 
       &.ui-state-hover {
@@ -40,27 +41,55 @@
 
       }
 
-      .ui-column-filter {
+      .ui-column-customfilter {
+        @include flexbox();
 
-        &.ui-inputfield {
-          &.ui-state-default {
+        input,
+        select {
+          margin: 0;
+          width: 100%;
+          @include flex(1);
+        }
+
+        input[type="text"] {
+          &.ui-state-default,
+          &.ui-state-hover {
             background: $gb-white;
             border: 1px solid $gb-silver;
-            color: $gb-mineshaft;
-            font-size: 0.9em;
-            font-weight: normal;
-            line-height: 1.0;
-            @include border-radius();
+            @include border-radius(0);
             @include box-shadow(none);
           }
-          &.ui-state-hover {
-            border: 1px solid $gb-graydusty;
-          }
-          &.ui-state-focus {
-            border: 1px solid $gb-graydusty;
-          }
         }
+
+        .ui-selectonemenu {
+          width: 100%;
+          @include flex(1);
+        }
+        
       }
+
+
+      // .ui-column-filter {
+      //
+      //   &.ui-inputfield {
+      //     &.ui-state-default {
+      //       background: $gb-white;
+      //       border: 1px solid $gb-silver;
+      //       color: $gb-mineshaft;
+      //       font-size: 0.9em;
+      //       font-weight: normal;
+      //       line-height: 1.0;
+      //       @include border-radius();
+      //       @include box-shadow(none);
+      //     }
+      //     &.ui-state-hover {
+      //       border: 1px solid $gb-graydusty;
+      //     }
+      //     &.ui-state-focus {
+      //       border: 1px solid $gb-graydusty;
+      //     }
+      //   }
+      // }
 
     }
   }
@@ -129,8 +158,8 @@
     }
   }
 
-  .number,
-  .currency {
+  td.number,
+  td.currency {
     text-align: right;
   }
 

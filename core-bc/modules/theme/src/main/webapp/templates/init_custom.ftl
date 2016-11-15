@@ -92,6 +92,14 @@
 	<#assign css_class = css_class + " dockbar-visible" />
 </#if>
 
+<#------ Theme Javascript -------------------------------------------------->
+
+<#assign theme_js_head_scripts = ["/radio/radio.min.js", "/pojs.js", "/chart.js/Chart.bundle.js"] />
+<#assign theme_js_jquery_base = "/jquery/jquery.min.js" />
+<#assign theme_js_bottom_scripts = ["/handlebars/handlebars.js", "/jquery/jquery.mask/jquery.mask.js", "/jquery/chosen.jquery/chosen.jquery.min.js", "/hotkeys/hotkeys.js", "/jquery/custom/jquery.gb.userprogress.js", "/jq.js"] />
+
+
+
 
 <#------ Macros -------------------------------------------------->
 
