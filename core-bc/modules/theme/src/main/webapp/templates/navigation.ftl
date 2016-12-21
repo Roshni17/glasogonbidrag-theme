@@ -53,6 +53,16 @@
       			</li>
       		</#list>
 
+          <#if is_signed_in && layout.isPublicLayout() >
+            <li class="gb-icon">
+              <a class="" href="${applicationURL}">
+                <span>
+                    ${goToApplicationLabel}
+                </span>
+              </a>
+            </li>
+          </#if>
+
           <#if show_dockbar>
       			<li class="gb-icon gb-icon-dockbar gb-open-only">
       				<a class="toggle-dockbar" href="javascript:;">Toggle Dockbar</a>

@@ -53,6 +53,11 @@
 	<#assign css_class = css_class + " js-allow-hotkeys" />
 </#if>
 
+<#------ URL:s -------------------------------------------------->
+
+<#assign applicationURL = "/group" + page_group.getFriendlyURL() />
+<#assign goToApplicationLabel = "Till applikationen" />
+
 <#------ Login page -------------------------------------------------->
 
 <#if is_login_page>
