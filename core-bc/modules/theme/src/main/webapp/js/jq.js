@@ -218,35 +218,6 @@
 
       });
 
-
-      // var pnMaskBehaviour = function(val) {
-      //   return val.replace(/-/g, '').length === 10 ? '000000-0000' : '00000000-0000';
-      // }
-      //
-      // var pnMaskOptions = {
-      //   onKeyPress: function(val, e, field, options) {
-      //     field.mask(pnMaskBehaviour.apply({}, arguments), pnMaskOptions);
-      //   }
-      // };
-      //
-      // $('.js-input-mask.js-input-mask-personnumber').mask(pnMaskBehaviour, pnMaskOptions);
-
-      // var personalNumberMasks = ['000000-0000', '00000000-0000'];
-      // var personalNumberMaskOptions = {
-      //   onKeyPress: function(fieldData, e, field, personalNumberMaskOptions) {
-      //
-      //     //console.log(fieldData.length);
-      //
-      //     var mask = (fieldData.length > 11 ? personalNumberMasks[1] : personalNumberMasks[0]);
-      //     //$(field).unmask();
-      //     $(field).mask(mask, personalNumberMaskOptions);
-      //
-      //   }
-      // };
-      //
-      // $('.js-input-mask.js-input-mask-personnumber').mask(personalNumberMasks[0], personalNumberMaskOptions);
-
-
       // Date
       $('.js-input-mask.js-input-mask-date').mask('0000-00-00');
 
@@ -383,7 +354,6 @@
         }
 
         else if(event.which == KEY_ARROW_RIGHT) {
-          //console.log(currentCheckbox.is(':checked'));
           if(currentCheckbox.is(':checked')) {
             var firstDetailsField = currentTarget.closest('.prescription-section-main').next('.prescription-section-fields').find('.prescription-section-fieldset:first').find('.prescription-section-field:first').find('input');
             firstDetailsField.focus();
@@ -416,7 +386,6 @@
     }
 
     function _onViewPartialReload() {
-      //console.log('_onViewPartialReload');
       refreshUI();
       _focusNode($('#content'));
     }

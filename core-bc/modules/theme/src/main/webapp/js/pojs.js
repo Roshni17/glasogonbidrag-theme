@@ -114,12 +114,6 @@ function bindToggleMyApplicationNav() {
 		}
 }
 
-// TODO: 2016-10-18. remove this when portlet project branches have been merged with master. Then this function is not needed anymore.
-function ajaxComplete(data) {
-	console.log('Will do viewPartialReload with ajaxComplete');
-	radio('viewPartialReload').broadcast();
-}
-
 function jsfAjaxEventHandler(xhr, portletNamespace) {
 
 	var xhrStatus = xhr.status;
