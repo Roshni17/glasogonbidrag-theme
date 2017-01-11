@@ -65,7 +65,7 @@
           width: 100%;
           @include flex(1);
         }
-        
+
       }
 
 
@@ -99,6 +99,8 @@
 
     tr {
       td {
+
+        background: $gb-gallery;
 
         a {
           color: $gb-mineshaft;
