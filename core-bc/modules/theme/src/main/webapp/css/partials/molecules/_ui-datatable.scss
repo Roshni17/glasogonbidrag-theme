@@ -100,7 +100,7 @@
     tr {
       td {
 
-        background: $gb-gallery;
+        background: $gb-wildsand;
 
         a {
           color: $gb-mineshaft;
@@ -114,8 +114,11 @@
       }
 
       &.ui-state-hover {
-        background: $gb-alto;
         border-color: $gb-silver;
+
+        td {
+          background: $gb-gallery;
+        }
 
         td,
         a {
